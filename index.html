@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="theme-color" content="#6B8EC6">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="format-detection" content="telephone=yes">
+    <title>MOM — Семейный медицинский центр</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader" id="loader"><div class="loader-circle"></div></div>
+
+<!-- Floating Phone -->
+<a href="tel:+74712360061" class="floating-phone"><i class="fas fa-phone-alt"></i></a>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+    <a href="#" class="logo" onclick="showPage('home'); return false;">
+        <img src="images/image_001.png" alt="MOM" style="height:42px;width:auto;border-radius:50%;">mom
+    </a>
+    <ul class="nav-links">
+        <li><a onclick="showPage('home')" id="nav-home">Главная</a></li>
+        <li><a onclick="showPage('reviews')" id="nav-reviews">Отзывы</a></li>
+        <li><a onclick="showPage('staff')" id="nav-staff">Специалисты</a></li>
+        <li><a onclick="showPage('articles')" id="nav-articles">Статьи</a></li>
+        <li><a onclick="showPage('ankety')" id="nav-ankety">Анкеты</a></li>
+        <li><a onclick="showPage('directions')" id="nav-directions">Услуги</a></li>
+        <li><a onclick="showPage('prices')" id="nav-prices">Цены</a></li>
+    </ul>
+        <div class="nav-extra">
+        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-primary btn-small">Записаться</a>
+        <a href="https://app.medtochka.ru/authorization/?next=%2F%3Flpu_hash%3D9d07f51dcdac17646e01a3bdfc52a159%26source%3Dmedflex_widget" target="_blank" class="btn btn-outline btn-small">Личный кабинет</a>
+    </div>
+    <div class="nav-contact">
+        <a href="tel:+74712360061">+7 (4712) 36-00-61</a>
+        <span>г. Курск, ул. Л. Толстого, д. 21, пом III</span>
+    </div>
+    <div class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <a onclick="showPage('home'); toggleMobileMenu();">Главная</a>
+    <a onclick="showPage('reviews'); toggleMobileMenu();">Отзывы</a>
+    <a onclick="showPage('staff'); toggleMobileMenu();">Специалисты</a>
+    <a onclick="showPage('articles'); toggleMobileMenu();">Статьи</a>
+    <a onclick="showPage('ankety'); toggleMobileMenu();">Анкеты</a>
+    <a onclick="showPage('directions'); toggleMobileMenu();">Услуги</a>
+    <a onclick="showPage('prices'); toggleMobileMenu();">Цены</a>
+    <a onclick="showPage('library'); toggleMobileMenu();">Библиотека</a>
+    <a href="tel:+74712360061" style="color:var(--accent);font-weight:700;"><i class="fas fa-phone"></i> +7 (4712) 36-00-61</a>
+</div>
+
+<!-- ==================== HOME PAGE ==================== -->
+<div class="page active" id="page-home">
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Семейный медицинский центр <span>"MOM"</span></h1>
+            <p class="hero-subtitle">Добро пожаловать в наш новый удивительный мир!</p>
+            <div class="hero-description" style="margin: 20px 0; padding: 15px 20px; background: rgba(255,255,255,0.7); border-radius: 12px; backdrop-filter: blur(5px);">
+              <p style="color: #444; font-size: 0.95rem; line-height: 1.6;">Семейный медицинский центр «МОМ» — это место, где забота о детях и поддержка родителей становятся приоритетом. Мы предлагаем комплексные медицинские услуги, развивающие занятия и тёплую атмосферу для всей семьи.</p>
+            </div>
+            <p class="hero-hours"><i class="far fa-clock"></i>с 9:00 до 21:00 ежедневно</p>
+            <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="far fa-calendar-check"></i>Записаться на прием</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/photo_waiting_room.jpg" alt="Family">
+        </div>
+    </section>
+
+    <!-- Directions -->
+    <section class="directions" id="directions" style="position:relative;overflow:hidden;">
+    <div class="floating-circle" style="width: 200px; height: 200px; background: linear-gradient(135deg, #f06292, #ffb6c1); top: 10%; right: -50px; animation-delay: 0s;"></div>
+    <div class="floating-circle" style="width: 150px; height: 150px; background: linear-gradient(135deg, #4A86C1, #A8D5A2); bottom: 20%; left: -30px; animation-delay: 1.5s;"></div>
+        <h2 class="section-title fade-in">Наши направления</h2>
+        <p class="section-subtitle fade-in">В нашей компетенции не только медицинские, но и психологические виды амбулаторной помощи всей Вашей семье</p>
+        <div class="directions-wrapper">
+            <div class="directions-grid">
+                <a class="direction-card fade-in" onclick="showPage('pediatriya')"><span>Педиатрия</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('psihicheskoe-zdorove')"><span>Психическое здоровье</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('terapiya')"><span>Терапия</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('logopediya')"><span>Логопедия</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('uzi')"><span>УЗИ</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('fizioterapiya')"><span>Физиотерапия</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('nevrologiya')"><span>Неврология</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('bobat-terapiya')"><span>Бобат-терапия</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('massazh')"><span>Массаж</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('voyta-terapiya')"><span>Войта-терапия</span><i class="fas fa-chevron-right"></i></a>
+                <a class="direction-card fade-in" onclick="showPage('ippoterapiya')"><span>Иппотерапия</span><i class="fas fa-chevron-right"></i></a>
+        <a class="direction-card fade-in" onclick="showPage('endokrinologiya')"><span>Эндокринология</span><i class="fas fa-chevron-right"></i></a>
+        <a class="direction-card fade-in" onclick="showPage('neyropsihologiya')"><span>Нейропсихология</span><i class="fas fa-chevron-right"></i></a>
+        <a class="direction-card fade-in" onclick="showPage('first-42-days')"><span>Первые 42 дня</span><i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div class="directions-illustration fade-in">
+                <img src="images/photo_yellow_chair.jpg" alt="Child">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" style="position:relative;overflow:hidden;">
+    <div class="floating-circle" style="width: 180px; height: 180px; background: linear-gradient(135deg, #6B8EC6, #A8D5A2); top: 5%; left: -40px; animation-delay: 0.5s;"></div>
+    <div class="floating-circle" style="width: 120px; height: 120px; background: linear-gradient(135deg, #D8457A, #FCE4EC); bottom: 10%; right: -20px; animation-delay: 2s;"></div>
+        <div class="features-grid">
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У нас <strong>тепло и уютно</strong></p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У нас <strong>улыбаются</strong> и смеются</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У нас <strong>нет слова "нельзя"</strong></p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У нас <strong>не слушают</strong> о своих проблемах, а получают ответ, как их решить!</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У нас дети <strong>играют</strong> в этот момент</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У нас каждая мама может <strong>взять себе минутку</strong> и выпить чай</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У нас <strong>кормят грудью</strong> даже на приеме у доктора</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У нас <strong>не осудят</strong> за плохое поведение / истерику... у нас поймут и помогут</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">Мы <strong>против агрессивного лечения</strong> патологий</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У наших врачей <strong>нет плана продаж</strong> и мотивации за назначение анализов</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">Мы <strong>не повышаем иммунитет</strong> с помощью таблеток</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">И <strong>не лечим вирусы</strong></p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">Мы <strong>обнимаем</strong> наших пациентов</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">Мы ЗА <strong>максимальное обучение родителей</strong> и глубоко убеждены, что знания — первый кирпичик в успешной профилактике</p></div>
+        </div>
+        <div class="features-extra">
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">Приём специалистов длится от 30 до 60 минут (мы заложили время для разговора, <strong>понимания</strong> и для полного отсутствия "конвейерного" приема или же спешки)</p></div>
+            <div class="feature-item fade-in"><div class="feature-check"><i class="fas fa-check"></i></div><p class="feature-text">У нас существуют <strong>анкеты</strong> (анкета позволяет сообщить маме тонкости или же особенности приема лично врачу, которые она не готова произнести при ребёнке)</p></div>
+        </div>
+    </section>
+
+    <!-- Staff -->
+    <section class="staff" id="staff" style="position:relative;overflow:hidden;">
+    <div class="floating-circle" style="width: 200px; height: 200px; background: linear-gradient(135deg, #f06292, #ffb6c1); top: 15%; right: -60px; animation-delay: 0.3s;"></div>
+    <div class="floating-circle" style="width: 160px; height: 160px; background: linear-gradient(135deg, #4A86C1, #A8D5A2); bottom: 15%; left: -40px; animation-delay: 1.8s;"></div>
+        <h2 class="section-title fade-in">Наши сотрудники</h2>
+        <p class="section-subtitle fade-in">Высококвалифицированные специалисты, для кого забота о детском здоровье — призвание</p>
+        <div class="staff-carousel-wrapper">
+            <button class="carousel-arrow prev" onclick="scrollStaff(-1)"><i class="fas fa-chevron-left"></i></button>
+            <div class="staff-carousel" id="staffCarousel">
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_tkachenko.jpg" alt="Ткаченко Екатерина Андреевна">
+                    <div class="staff-info">
+                        <div class="staff-name">Ткаченко Екатерина Андреевна</div>
+                        <div class="staff-role">Педиатр</div>
+                        <div class="staff-role">11 лет | 32 отзыва</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Ткаченко Екатерина Андреевна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_petrovskaya.jpeg" alt="Петровская Надежда Юрьевна">
+                    <div class="staff-info">
+                        <div class="staff-name">Петровская Надежда Юрьевна</div>
+                        <div class="staff-role">Детский врач УЗИ</div>
+                        <div class="staff-role">11 лет, высшая кат. | 74 отзыва</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Петровская Надежда Юрьевна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_kaplina.jpeg" alt="Каплина Карина Романовна">
+                    <div class="staff-info">
+                        <div class="staff-name">Каплина Карина Романовна</div>
+                        <div class="staff-role">Неонатолог, физиотерапевт</div>
+                        <div class="staff-role">10 лет | 12 отзывов</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Каплина Карина Романовна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_martynova.jpg" alt="Мартынова Ольга Игоревна">
+                    <div class="staff-info">
+                        <div class="staff-name">Мартынова Ольга Игоревна</div>
+                        <div class="staff-role">Детский психиатр, психиатр</div>
+                        <div class="staff-role">3 года | 6 отзывов</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Мартынова Ольга Игоревна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_blyum.jpg" alt="Блюм Анна Ивановна">
+                    <div class="staff-info">
+                        <div class="staff-name">Блюм Анна Ивановна</div>
+                        <div class="staff-role">Детский психолог</div>
+                        <div class="staff-role">4 отзыва</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Блюм Анна Ивановна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_kazanova.jpg" alt="Казанова Марина Витальевна">
+                    <div class="staff-info">
+                        <div class="staff-name">Казанова Марина Витальевна</div>
+                        <div class="staff-role">Врач УЗИ</div>
+                        <div class="staff-role">11 лет, 1-я кат. | 2 отзыва</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Казанова Марина Витальевна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_korovina.jpg" alt="Коровина Елизавета Юрьевна">
+                    <div class="staff-info">
+                        <div class="staff-name">Коровина Елизавета Юрьевна</div>
+                        <div class="staff-role">Педиатр</div>
+                        <div class="staff-role">5 лет | 3 отзыва</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Коровина Елизавета Юрьевна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">Ж.Н.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Жукова Надежда Андреевна</div>
+                        <div class="staff-role">Невролог, детский невролог</div>
+                        <div class="staff-role">3 года | 13 отзывов</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">Г.А.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Голякова Анна Михайловна</div>
+                        <div class="staff-role">Педиатр</div>
+                        <div class="staff-role">10 лет | 11 отзывов</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_denisova.jpg" alt="Денисова Анна Денисовна">
+                    <div class="staff-info">
+                        <div class="staff-name">Денисова Анна Денисовна</div>
+                        <div class="staff-role">Педиатр</div>
+                        <div class="staff-role">3 года | 16 отзывов</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Денисова Анна Денисовна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">Т.И.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Толмачева Инна Олеговна</div>
+                        <div class="staff-role">Психиатр, детский психиатр</div>
+                        <div class="staff-role">11 лет | 20 отзывов</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">М.Е.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Маслова Евангелина Олеговна</div>
+                        <div class="staff-role">Педиатр</div>
+                        <div class="staff-role">4 года | 4 отзыва</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_yushkova.jpg" alt="Юшкова Алина Геннадьевна">
+                    <div class="staff-info">
+                        <div class="staff-name">Юшкова Алина Геннадьевна</div>
+                        <div class="staff-role">Педиатр</div>
+                        <div class="staff-role">2 года | 3 отзыва</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Юшкова Алина Геннадьевна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">П.Н.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Панкова Наталья Викторовна</div>
+                        <div class="staff-role">Терапевт</div>
+                        <div class="staff-role">15 лет | 1 отзыв</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">Е.Н.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Елинова Наталья Николаевна</div>
+                        <div class="staff-role">Логопед</div>
+                        <div class="staff-role">28 лет | 1 отзыв</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">С.К.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Спицына Ксения Александровна</div>
+                        <div class="staff-role">Педиатр</div>
+                        <div class="staff-role">8 лет | 1 отзыв</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <img class="staff-img" src="images/doctor_araeva.jpg" alt="Араева Екатерина Михайловна">
+                    <div class="staff-info">
+                        <div class="staff-name">Араева Екатерина Михайловна</div>
+                        <div class="staff-role">Специалист по грудному вскармливанию</div>
+                        <div class="staff-role">1 отзыв</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                        <button class="staff-btn staff-btn-info" onclick="openDoctorModal('Араева Екатерина Михайловна')">Информация</button>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">Г.Ю.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Гвоздева Юлия Анатольевна</div>
+                        <div class="staff-role">Врач УЗИ</div>
+                        <div class="staff-role">19 лет</div>
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">П.С.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Пашкова Светлана Сергеевна</div>
+                        <div class="staff-role">Детский массажист, массажист</div>
+                        
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+                <div class="staff-card fade-in">
+                    <div class="staff-img" style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700;">П.М.</div>
+                    <div class="staff-info">
+                        <div class="staff-name">Полянская Мария Юрьевна</div>
+                        <div class="staff-role">Психолог</div>
+                        
+                    </div>
+                    <div class="staff-buttons">
+                        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="staff-btn staff-btn-book">Записаться</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-arrow next" onclick="scrollStaff(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Library -->
+    <!-- ==================== SECTION: БИБЛИОТЕКА ==================== -->
+<section id="library" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Библиотека для родителей</h2>
+            <p class="section-subtitle">Рекомендуем литературу по детской психологии и воспитанию</p>
+        </div>
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 40px; padding: 50px 40px; background: linear-gradient(135deg, #F0F5FF, #FFF5F8); border-radius: 24px; box-shadow: 0 10px 40px rgba(107,142,198,0.08);">
+            <div style="font-size: 72px; margin-bottom: 20px;">📚</div>
+            <h3 style="color: var(--primary); margin-bottom: 15px; font-size: 26px;">Полезные книги для мам и пап</h3>
+            <p style="color: var(--text-light); line-height: 1.7; margin-bottom: 30px; font-size: 16px;">
+                Мы собрали для вас подборку лучших книг о детском развитии, воспитании и здоровье. 
+                Каждая книга — это мудрость опытных авторов, которая поможет вам лучше понять своего ребенка.
+            </p>
+            <button onclick="showPage('library')" style="padding: 16px 45px; background: linear-gradient(135deg, #6B8EC6, #D8457A); color: white; border: none; border-radius: 50px; font-size: 16px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(107, 142, 198, 0.4); font-family: 'Nunito', sans-serif; transition: all 0.3s;">
+                Перейти к книгам →
+            </button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Social -->
+    <div class="social-banner">
+        <a href="#"><h2>Подписывайтесь на наши социальные сети <i class="fas fa-arrow-right"></i></h2></a>
+    </div>
+
+    <!-- About -->
+    <section class="about" style="position:relative;overflow:hidden;">
+    <div class="floating-circle" style="width: 200px; height: 200px; background: linear-gradient(135deg, #f06292, #ffb6c1); top: 10%; right: -50px; animation-delay: 0s;"></div>
+    <div class="floating-circle" style="width: 150px; height: 150px; background: linear-gradient(135deg, #4A86C1, #A8D5A2); bottom: 20%; left: -30px; animation-delay: 1.5s;"></div>
+        <div class="about-content fade-in">
+            <h2>О нашем центре</h2>
+            <p><strong>Семейный медицинский центр «MOM» — это забота о здоровье семьи и ребенка как единого целого.</strong></p>
+            <p><strong>Семейный подход.</strong> Мы не просто лечим, а помогаем всей семье. Наша задача — комплексное лечение, адаптация, восстановление и поддержка семьи.</p>
+            <p><strong>Цель — здоровая семья.</strong> Наша главная задача — сохранить здоровье семьи.</p>
+            <p><strong>Комплекс «медицина + психическое здоровье».</strong> Мы объединяем современную медицинскую помощь с психологической поддержкой для родителей и детей.</p>
+            <p><strong>Врачи, которые любят детей.</strong> С вами работают высококвалифицированные врачи, для кого забота о детском здоровье и о здоровье семьи — это призвание.</p>
+            <p><strong>Безопасность и комфорт.</strong> Все ресурсы центра направлены на эффективное, безопасное лечение и создание максимально комфортной, спокойной атмосферы для визитов.</p>
+        </div>
+        <div class="about-img fade-in">
+            <img src="images/photo_reception_desk.jpg" alt="О центре" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;">
+        </div>
+    </section>
+
+    <!-- News -->
+    <!-- ==================== SECTION: НОВОСТИ ==================== -->
+<section id="news">
+  
+
+  <h2>Новости центра</h2>
+  <p class="subtitle">Будьте в курсе событий медицинского центра MOM</p>
+
+  <div class="news-grid" id="news-grid" style="min-height:200px;display:flex;align-items:center;justify-content:center;">
+    <p style="color:#999;font-size:1.1rem;text-align:center;">Новостей пока нет</p>
+  </div><!-- ===== МОДАЛЬНОЕ ОКНО ===== -->
+  <div id="news-modal" class="modal" onclick="if(event.target===this)closeNewsModal()">
+    <div class="modal-content">
+      <span class="close" onclick="closeNewsModal()">&times;</span>
+      <div id="news-modal-content"></div>
+    </div>
+  </div>
+
+  
+</section>
+
+
+    <!-- Reviews -->
+        <section class="reviews" id="reviews" style="position:relative;overflow:hidden;">
+    <div class="floating-circle" style="width: 200px; height: 200px; background: linear-gradient(135deg, #f06292, #ffb6c1); top: 10%; right: -50px; animation-delay: 0.2s;"></div>
+    <div class="floating-circle" style="width: 160px; height: 160px; background: linear-gradient(135deg, #4A86C1, #A8D5A2); bottom: 20%; left: -30px; animation-delay: 1.7s;"></div>
+        <h2 class="section-title fade-in">Отзывы от мам и пап о нашей клинике</h2>
+        <div class="review-card fade-in">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама малыша</h3>
+                <p>"Выставили страшные диагнозы моему ребенку. В панике приехала к доктору Карине Романовне и Екатерине Андреевне. Никогда не устану благодарить их. Атмосфера в клинике такая теплая, спокойная. Вежливый персонал, все для комфорта мамы и малыша."</p>
+            </div>
+        </div>
+        <div class="review-card fade-in">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Вари</h3>
+                <p>"Были в клинике с дочкой. У ребенка тяжелая форма эпилепсии, вследствие чего ЗПР. Проходим курс Войта-терапии у Каплиной Карины Романовны. Обращаемся в клинику не первый раз. И после каждого курса результат налицо."</p>
+            </div>
+        </div>
+        <div class="review-card fade-in">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Кати</h3>
+                <p>"Были в клинике Mom вместе с дочерью. Внимательное отношение, от администраторов до врачей. Индивидуальный подход к пациенту. Отдельное спасибо врачу УЗИ Петровской Н.Ю. Профессионал своего дела."</p>
+            </div>
+        </div>
+    </section><section class="location" id="location" style="position:relative;overflow:hidden;">
+    <div class="floating-circle" style="width: 190px; height: 190px; background: linear-gradient(135deg, #6B8EC6, #A8D5A2); top: 10%; right: -45px; animation-delay: 0.6s;"></div>
+    <div class="floating-circle" style="width: 150px; height: 150px; background: linear-gradient(135deg, #f06292, #ffb6c1); bottom: 20%; left: -30px; animation-delay: 2.1s;"></div>
+        <div class="location-info fade-in">
+            <h2>Где нас найти?</h2>
+            <div class="location-detail"><i class="fas fa-map-marker-alt"></i><span>г. Курск, ул. Л. Толстого, д. 21, пом III</span></div>
+            <div class="location-detail"><i class="fas fa-phone"></i><a href="tel:+74712360061">36 - 00 - 61</a></div>
+            <div class="location-detail"><i class="fas fa-mobile-alt"></i><a href="tel:+79623809025">+7 962 380-90-25</a></div>
+            <div class="location-detail"><i class="far fa-clock"></i><span>Ежедневно с 9:00 до 21:00</span></div>
+            <a href="https://yandex.ru/maps/8/kursk/house/ulitsa_lva_tolstogo_21/Z08YdAdjTkQDQFtrfXt0c3piZw==/" target="_blank" class="btn btn-secondary" style="margin-top: 20px;"><i class="fas fa-map-marked-alt"></i>Открыть в Картах</a>
+        </div>
+        <div class="location-map fade-in">
+            <iframe src="https://yandex.ru/map-widget/v1/?ll=36.203714%2C51.752613&z=16&pt=36.203714%2C51.752613%2Cpm2rdl" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-nav" style="margin-bottom:15px;"><a onclick="showPage('home')">Главная</a> | <a onclick="showPage('directions')">Услуги</a> | <a onclick="showPage('prices')">Цены</a> | <a onclick="showPage('staff')">Специалисты</a> | <a onclick="showPage('articles')">Статьи</a> | <a onclick="showPage('ankety')">Анкеты</a> | <a onclick="showPage('privacy')">Политика</a></div>
+        <div class="footer-logo"><img src="images/image_026.png" alt="MOM" style="height:50px;width:auto;"></div>
+        <div class="footer-info">
+            Медицинский центр «MOM»<br>
+            Адрес: г. Курск, ул. Л. Толстого, д. 21, пом. III<br>
+            Лицензия на медицинскую деятельность: № Л041-01147-46<br>
+            <a href="images/Л041-01147-46_00611935.pdf" target="_blank" style="color: var(--accent); text-decoration: underline;">Посмотреть лицензию (PDF)</a><br><br>
+            ОГРН, ИНН, КПП — уточняются<br>
+            © 2025 Медицинский центр MOM. Все права защищены.<br>
+            Сайт не является публичной офертой.
+        </div>
+        <div class="footer-links"><span>Информация для пациентов в соответствии с Постановлением Правительства РФ № 1721</span></div>
+        <div class="footer-copy">Сделано с ♥ для семейного медицинского центра MOM</div>
+    </footer>
+</div>
+
+<!-- ==================== REVIEWS PAGE ==================== -->
+<div class="page" id="page-reviews">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);">
+        <div>
+            <h1><i class="fas fa-comments"></i> Отзывы</h1>
+            <p>Что говорят о нас мамы и папы</p>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <a onclick="showPage('home')">Главная</a><span>/</span>Отзывы
+    </div>
+    <div class="reviews-page">
+        <div class="reviews-page">
+        <div class="review-card">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама малыша</h3>
+                <p>"Выставили страшные диагнозы моему ребенку. В панике приехала к доктору Карине Романовне и Екатерине Андреевне. Никогда не устану благодарить их. Успокоили, все объяснили. К моему малышу относились с теплом и заботой. Атмосфера в клинике такая теплая, спокойная. Вежливый персонал, все для комфорта мамы и малыша. Буду советовать только эту клинику мамам. Грамотные специалисты, знающие свое дело на все 100%."</p>
+            </div>
+        </div>
+        <div class="review-card" style="flex-direction: row-reverse; background: linear-gradient(135deg, #F5E6F0, #F0F5FF);">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Саши</h3>
+                <p>"Посещаю вторично. Выбрала именно эту клинику и специалиста УЗИ Казанову М.В. Грамотный подход, ясная и четкая консультация. Врач также отличается своим вниманием, деликатностью в общении и умением правильно интерпретировать результаты обследования. Спасибо! Все супер! Порекомендую знакомым непременно. При необходимости, приду именно сюда."</p>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Вари</h3>
+                <p>"Были в клинике с дочкой. У ребенка тяжелая форма эпилепсии, вследствие чего ЗПР. Проходим курс Войта-терапии у Каплиной Карины Романовны. Обращаемся в клинику не первый раз. И после каждого курса результат налицо. Огромным плюсом считаю напоминание о времени приема, мне, как многодетной маме с бесконечным списком задач на день, очень удобно."</p>
+            </div>
+        </div>
+        <div class="review-card" style="flex-direction: row-reverse; background: linear-gradient(135deg, #F5E6F0, #F0F5FF);">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Кати</h3>
+                <p>"Были в клинике «Mom» вместе с дочерью. Внимательное отношение, от администраторов до врачей. Индивидуальный подход к пациенту. Отдельное спасибо врачу УЗИ Петровской Н.Ю. Профессионал своего дела. Рекомендую и врача, и клинику."</p>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Лены</h3>
+                <p>"Обращаемся, когда нужно срочно показать ребенка врачу. Здесь я уверена, что к ребенку отнесутся внимательно. Собирают подробный анамнез. Педиатр обязательно посмотрит уши, что для меня важно, и выпишет качественное лечение без лишних неэффективных лекарств. В этой клинике тот подход, который я и ожидаю от врачей. В клинике чисто, красиво, всё для детей."</p>
+            </div>
+        </div>
+        <div class="review-card" style="flex-direction: row-reverse; background: linear-gradient(135deg, #F5E6F0, #F0F5FF);">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Димы</h3>
+                <p>"В медицинский центр обращалась с сыном неоднократно. Оказавшись там однажды, больше не хочется искать чего-то ещё. Тут работают настоящие профессионалы своего дела. На ресепшене всегда доброжелательные администраторы. В клинике прекрасная атмосфера, много разнообразных игрушек, всегда комфортно и светло. Это место сделано по-настоящему с любовью к детям и их семьям."</p>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="review-content" style="width:100%;">
+                <h3>Пациент</h3>
+                <p>"Обратилась в клинику, так как потребовалась срочная консультация терапевта. На ресепшен встретил доброжелательный администратор, все документы оформили достаточно быстро. Врач Панкова Н.В. очень внимательно выслушала все жалобы, дала рекомендации по лечению. Осмотр врача был очень компетентным. Атмосфера в клинике приятная, уютная, очередей нет. Цены приемлемые. Не пожалела, что обратилась именно в эту клинику. Рекомендую однозначно."</p>
+            </div>
+        </div>
+        <div class="review-card" style="flex-direction: row-reverse; background: linear-gradient(135deg, #F5E6F0, #F0F5FF);">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Сони</h3>
+                <p>"С рождения наблюдаемся в этой клинике. Всем рекомендую. Уютная клиника. Удобное расположение и парковка. Никогда нет толпы, не задерживается по времени прием. Удобная и комфортная комната для кормления и переодевания ребенка, есть все необходимое (от салфеток до подгузников). Моя дочь на груди, кушаем и спим прям во время приема."</p>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Полины</h3>
+                <p>"Ходим в клинику с дочкой к педиатру с годика. Прекрасное место, всё продумано для мамы и ребенка! Вежливое, доброе отношение. Все очень компетентные и грамотные врачи. Располагают к себе ребенка, что немаловажно. Прием проходит без слез. И очень удобно, когда после приема создают чат с врачом и до завершения лечения можно быть на связи."</p>
+            </div>
+        </div>
+        <div class="review-card" style="flex-direction: row-reverse; background: linear-gradient(135deg, #F5E6F0, #F0F5FF);">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Семы</h3>
+                <p>"В клинику обращалась впервые и не прогадала. Ходили на УЗИ с сыном. Клиника очень понравилась, всё красиво, стильно и чисто. Персонал доброжелательный. Надежда Юрьевна расположила нас полностью к себе, подробно объясняла каждую манипуляцию, мы остались в восторге! Спасибо огромное! Рекомендуем!"</p>
+            </div>
+        </div>
+        <div class="review-card">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Лизы</h3>
+                <p>"В клинику пришли уже повторно с моим ребенком на УЗИ. В клинике очень уютно, чисто, светло. На ресепшен очень вежливый администратор. УЗИ делали ребенку (1 годик), врач была очень внимательна и аккуратна, предложила ему развивающие игрушки, ребенок заинтересовался и не капризничал. Во время исследования врач с ребенком разговаривала, ребенок реагировал на голос."</p>
+            </div>
+        </div>
+        <div class="review-card" style="flex-direction: row-reverse; background: linear-gradient(135deg, #F5E6F0, #F0F5FF);">
+            <div class="review-content" style="width:100%;">
+                <h3>Мама Коли</h3>
+                <p>"Отличная клиника, чисто, уютно. Персонал на ресепшн вежливый. Принимают лучшие врачи города. Были на приеме у невролога Жуковой Н.А. — замечательный врач! Прием не скомканный, как у других врачей. Посмотрела моего малыша, расположила, ответила на все вопросы. Рекомендую!"</p>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<!-- ==================== STAFF LIST PAGE ==================== -->
+<div class="page" id="page-staff">
+    <div class="direction-hero" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);">
+        <div>
+            <h1><i class="fas fa-user-md"></i> Наши специалисты</h1>
+            <p>Команда профессионалов медицинского центра MOM</p>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <a onclick="showPage('home')">Главная</a><span>/</span>Специалисты
+    </div>
+    <div class="staff-list-grid">
+        <div class="staff-list-card">
+            <img src="images/doctor_tkachenko.jpg" alt="Ткаченко Екатерина Андреевна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Ткаченко Екатерина Андреевна</h3>
+                <p>Педиатр</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 11 лет | 32 отзыва</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Ткаченко Екатерина Андреевна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <img src="images/doctor_petrovskaya.jpeg" alt="Петровская Надежда Юрьевна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Петровская Надежда Юрьевна</h3>
+                <p>Детский врач УЗИ</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 11 лет, высшая кат. | 74 отзыва</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Петровская Надежда Юрьевна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <img src="images/doctor_kaplina.jpeg" alt="Каплина Карина Романовна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Каплина Карина Романовна</h3>
+                <p>Неонатолог, физиотерапевт</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 10 лет | 12 отзывов</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Каплина Карина Романовна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <img src="images/doctor_martynova.jpg" alt="Мартынова Ольга Игоревна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Мартынова Ольга Игоревна</h3>
+                <p>Детский психиатр, психиатр</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 3 года | 6 отзывов</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Мартынова Ольга Игоревна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <img src="images/doctor_blyum.jpg" alt="Блюм Анна Ивановна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Блюм Анна Ивановна</h3>
+                <p>Детский психолог</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">4 отзыва</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Блюм Анна Ивановна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <img src="images/doctor_kazanova.jpg" alt="Казанова Марина Витальевна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Казанова Марина Витальевна</h3>
+                <p>Врач УЗИ</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 11 лет, 1-я кат. | 2 отзыва</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Казанова Марина Витальевна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <img src="images/doctor_korovina.jpg" alt="Коровина Елизавета Юрьевна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Коровина Елизавета Юрьевна</h3>
+                <p>Педиатр</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 5 лет | 3 отзыва</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Коровина Елизавета Юрьевна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">Ж.Н.</div>
+            <div class="staff-list-card-info">
+                <h3>Жукова Надежда Андреевна</h3>
+                <p>Невролог, детский невролог</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 3 года | 13 отзывов</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">Г.А.</div>
+            <div class="staff-list-card-info">
+                <h3>Голякова Анна Михайловна</h3>
+                <p>Педиатр</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 10 лет | 11 отзывов</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <img src="images/doctor_denisova.jpg" alt="Денисова Анна Денисовна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Денисова Анна Денисовна</h3>
+                <p>Педиатр</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 3 года | 16 отзывов</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Денисова Анна Денисовна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">Т.И.</div>
+            <div class="staff-list-card-info">
+                <h3>Толмачева Инна Олеговна</h3>
+                <p>Психиатр, детский психиатр</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 11 лет | 20 отзывов</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">М.Е.</div>
+            <div class="staff-list-card-info">
+                <h3>Маслова Евангелина Олеговна</h3>
+                <p>Педиатр</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 4 года | 4 отзыва</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <img src="images/doctor_yushkova.jpg" alt="Юшкова Алина Геннадьевна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Юшкова Алина Геннадьевна</h3>
+                <p>Педиатр</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 2 года | 3 отзыва</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Юшкова Алина Геннадьевна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">П.Н.</div>
+            <div class="staff-list-card-info">
+                <h3>Панкова Наталья Викторовна</h3>
+                <p>Терапевт</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 15 лет | 1 отзыв</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">Е.Н.</div>
+            <div class="staff-list-card-info">
+                <h3>Елинова Наталья Николаевна</h3>
+                <p>Логопед</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 28 лет | 1 отзыв</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">С.К.</div>
+            <div class="staff-list-card-info">
+                <h3>Спицына Ксения Александровна</h3>
+                <p>Педиатр</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 8 лет | 1 отзыв</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <img src="images/doctor_araeva.jpg" alt="Араева Екатерина Михайловна" style="width: 100%; height: 300px; object-fit: cover; border-radius: 12px 12px 0 0;">
+            <div class="staff-list-card-info">
+                <h3>Араева Екатерина Михайловна</h3>
+                <p>Специалист по грудному вскармливанию</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">1 отзыв</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+                <button class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block; margin-left: 8px;" onclick="openDoctorModal('Араева Екатерина Михайловна')">Информация</button>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">Г.Ю.</div>
+            <div class="staff-list-card-info">
+                <h3>Гвоздева Юлия Анатольевна</h3>
+                <p>Врач УЗИ</p>
+                <p style="color: var(--text-light); font-size: 12px; margin-top: 4px;">Стаж 19 лет</p>
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">П.С.</div>
+            <div class="staff-list-card-info">
+                <h3>Пашкова Светлана Сергеевна</h3>
+                <p>Детский массажист, массажист</p>
+                
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+        <div class="staff-list-card">
+            <div style="background: linear-gradient(135deg, #f0f5ff, #e8f4f8); display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 2.5rem; font-weight: 700; min-height: 200px; border-radius: 12px;">П.М.</div>
+            <div class="staff-list-card-info">
+                <h3>Полянская Мария Юрьевна</h3>
+                <p>Психолог</p>
+                
+                <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" class="btn btn-small btn-outline" style="margin-top: 8px; display: inline-block;">Записаться</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== DIRECTIONS LIST PAGE ==================== -->
+<div class="page" id="page-directions">
+    <div class="direction-hero">
+        <div>
+            <h1><i class="fas fa-stethoscope"></i> Наши услуги</h1>
+            <p>Комплексная медицинская и психологическая помощь всей семье</p>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <a onclick="showPage('home')">Главная</a><span>/</span>Услуги
+    </div>
+    <div class="directions-list-grid">
+        <div class="directions-list-card" onclick="showPage('pediatriya')"><i class="fas fa-baby"></i><h3>Педиатрия</h3><p>Комплексная забота о здоровье вашего ребенка с первых дней жизни</p></div>
+        <div class="directions-list-card" onclick="showPage('psihicheskoe-zdorove')"><i class="fas fa-brain"></i><h3>Психическое здоровье</h3><p>Психологическая поддержка для детей и родителей</p></div>
+        <div class="directions-list-card" onclick="showPage('terapiya')"><i class="fas fa-heartbeat"></i><h3>Терапия</h3><p>Лечение и профилактика заболеваний всей семьи</p></div>
+        <div class="directions-list-card" onclick="showPage('logopediya')"><i class="fas fa-comment-dots"></i><h3>Логопедия</h3><p>Коррекция речевых нарушений у детей</p></div>
+        <div class="directions-list-card" onclick="showPage('uzi')"><i class="fas fa-wave-square"></i><h3>УЗИ</h3><p>Ультразвуковая диагностика для детей и взрослых</p></div>
+        <div class="directions-list-card" onclick="showPage('fizioterapiya')"><i class="fas fa-procedures"></i><h3>Физиотерапия</h3><p>Восстановление и укрепление здоровья</p></div>
+        <div class="directions-list-card" onclick="showPage('nevrologiya')"><i class="fas fa-brain"></i><h3>Неврология</h3><p>Диагностика и лечение нервной системы</p></div>
+        <div class="directions-list-card" onclick="showPage('bobat-terapiya')"><i class="fas fa-hands"></i><h3>Бобат-терапия</h3><p>Нейрофизиологическая реабилитация</p></div>
+        <div class="directions-list-card" onclick="showPage('massazh')"><i class="fas fa-hand-sparkles"></i><h3>Массаж</h3><p>Лечебный и профилактический массаж для детей</p></div>
+        <div class="directions-list-card" onclick="showPage('voyta-terapiya')"><i class="fas fa-running"></i><h3>Войта-терапия</h3><p>Активация врожденных движений</p></div>
+        <div class="directions-list-card" onclick="showPage('ippoterapiya')"><i class="fas fa-horse"></i><h3>Иппотерапия</h3><p>Лечение с помощью лошадей</p></div>
+        <div class="directions-list-card" onclick="showPage('endokrinologiya')"><i class="fas fa-weight"></i><h3>Эндокринология</h3><p>Диагностика и лечение эндокринных нарушений</p></div>
+        <div class="directions-list-card" onclick="showPage('neyropsihologiya')"><i class="fas fa-puzzle-piece"></i><h3>Нейропсихология</h3><p>Обследование высших психических функций</p></div>
+        <div class="directions-list-card" onclick="showPage('first-42-days')"><i class="fas fa-baby-carriage"></i><h3>Школа первых 42 дней</h3><p>Комплексное сопровождение малыша и мамы</p></div>
+    </div>
+</div>
+
+<!-- ==================== LIBRARY PAGE ==================== -->
+<div class="page" id="page-library">
+    <div class="library-hero">
+        <div>
+            <h1><i class="fas fa-book-open"></i> Библиотека для родителей</h1>
+            <p>Подборка лучших книг о беременности, родах, родительстве и социальных взаимодействиях</p>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <a onclick="showPage('home')">Главная</a><span>/</span>Библиотека
+    </div>
+    <div style="text-align: center; padding: 40px 5% 0;">
+        <a class="back-btn" onclick="showPage('home')" style="display: inline-flex;"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+    </div>
+    <div class="library-grid">
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #FF9A9E, #FECFEF);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Я беременна. Что делать?</h3><div class="author">Светлана Бургун</div><div class="desc">Полное руководство для будущей мамы от первых недель до родов.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #a8edea, #fed6e3);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Ваш малыш от 0 до 1</h3><div class="author">Екатерина Филина</div><div class="desc">Всё о развитии ребенка первого года жизни: питание, сон, прививки.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Как перестать воспитывать ребенка и начать его растить</h3><div class="author">Людмила Петрановская</div><div class="desc">О природе детей и о том, как вырастить счастливого человека.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #d299c2, #fef9d7);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Счастливый ребенок. Новый подход к воспитанию</h3><div class="author">Марк Бертин</div><div class="desc">Научный подход к пониманию потребностей ребенка и семьи.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #89f7fe, #66a6ff);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Мозг ребенка. Инструкция по применению</h3><div class="author">Алла Шустерман</div><div class="desc">Как работает детский мозг и как помочь ему развиваться.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #fddb92, #d1fdff);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Прощай, гормоны! Как пережить беременность</h3><div class="author">Кристин Нордхаген</div><div class="desc">Эмоциональная поддержка и практические советы для беременных.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #e0c3fc, #8ec5fc);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Роды без страха</h3><div class="author">Грантли Дик-Рид</div><div class="desc">Классика жанра: как подготовиться к родам и пройти их спокойно.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #f6d365, #fda085);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Монтессори дома</h3><div class="author">Симон Дэвис</div><div class="desc">Принципы Монтессори для домашнего развития ребенка.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #84fab0, #8fd3f4);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Свободные от привязанности</h3><div class="author">Дэниел Сигел</div><div class="desc">О здоровой привязанности и эмоциональной связи с ребенком.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Как говорить, чтобы дети слушали</h3><div class="author">Адель Фабер, Элейн Мазлиш</div><div class="desc">Практические техники эффективного общения с детьми.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #fbc2eb, #a6c1ee);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Ваш ребенок от 1 до 3</h3><div class="author">Екатерина Филина</div><div class="desc">Второй том бестселлера: кризисы, воспитание, развитие.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #fdcbf1, #e6dee9);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Самостоятельный ребенок</h3><div class="author">Анна Быкова</div><div class="desc">Как стать «ленивой мамой» и вырастить самостоятельного ребенка.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #a8edea, #fed6e3);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Мифы о детях</h3><div class="author">Григорий Резник</div><div class="desc">Развенчание популярных мифов о детском здоровье и развитии.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Психология новорожденного</h3><div class="author">Т. Бразелтон</div><div class="desc">Как понять мир глазами младенца и наладить контакт с ним.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #d299c2, #fef9d7);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Ребенок и общество</h3><div class="author">Джон Боулби</div><div class="desc">Теория привязанности и социальное развитие ребенка.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #89f7fe, #66a6ff);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Привязанность</h3><div class="author">Джон Боулби</div><div class="desc">Фундаментальный труд о привязанности и её роли в жизни человека.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #fddb92, #d1fdff);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Семейные узы</h3><div class="author">Джон Боулби</div><div class="desc">О семейных отношениях и их влиянии на развитие личности.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #e0c3fc, #8ec5fc);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Мозг подростка</h3><div class="author">Фрэнсис Дженсен</div><div class="desc">Нейробиология подросткового возраста и как помочь ребенку.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #f6d365, #fda085);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Детская неврология</h3><div class="author">Справочник</div><div class="desc">Руководство для родителей по неврологическому здоровью детей.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #84fab0, #8fd3f4);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Педиатрия</h3><div class="author">Справочник</div><div class="desc">Базовые знания о детских заболеваниях и их профилактике.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Ваш ребенок от 3 до 7</h3><div class="author">Екатерина Филина</div><div class="desc">Третий том: дошкольное детство, подготовка к школе, социализация.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #fbc2eb, #a6c1ee);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Как вырастить ребенка счастливым</h3><div class="author">Плужников</div><div class="desc">Практические советы по созданию счастливого детства.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #fdcbf1, #e6dee9);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Невоспитанные дети</h3><div class="author">Кэтрин Рейнольдс Льюис</div><div class="desc">Почему дети ведут себя плохо и как это исправить без наказаний.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #a8edea, #fed6e3);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Сила воли</h3><div class="author">Келли Макгонигал</div><div class="desc">Как развить самоконтроль и научить этому ребенка.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Эмоциональный интеллект ребенка</h3><div class="author">Джон Готтман</div><div class="desc">Как научить ребенка понимать и управлять своими эмоциями.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #d299c2, #fef9d7);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Воспитание без криков и наказаний</h3><div class="author">Кэтрин Кесслер</div><div class="desc">Альтернативные методы дисциплины, основанные на уважении.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #89f7fe, #66a6ff);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Мама для мамы</h3><div class="author">Сборник</div><div class="desc">Истории, советы и поддержка от мам для мам в разных ситуациях.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #fddb92, #d1fdff);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Грудное вскармливание</h3><div class="author">Пособие</div><div class="desc">Полное руководство по ГВ: от первого прикладывания до завершения.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #e0c3fc, #8ec5fc);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Сон ребенка. Здоровый сон</h3><div class="author">Марк Вайсблут</div><div class="desc">Как наладить здоровый сон ребенка любого возраста.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #f6d365, #fda085);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Прикорм без проблем</h3><div class="author">Анна Краснова</div><div class="desc">Введение прикорма: когда, как и с чего начинать без стресса.</div></div></div>
+        <div class="book-card" onclick="openBookSearch(this.querySelector('h3').innerText)"><div class="book-cover" style="background: linear-gradient(135deg, #84fab0, #8fd3f4);"><i class="fas fa-book"></i></div><div class="book-info"><h3>Игровая терапия</h3><div class="author">Вирджиния Акслайн</div><div class="desc">Как игра помогает детям справляться с эмоциями и трудностями.</div></div></div>
+    </div>
+</div>
+
+<!-- ==================== STAFF DETAIL PAGES ==================== -->
+
+<!-- Kallina -->
+<!-- ==================== DIRECTION PAGES ==================== -->
+
+<!-- Pediatrics -->
+<div class="page" id="page-pediatriya">
+    <div class="direction-hero">
+        <div>
+            <h1><i class="fas fa-baby"></i> Педиатрия</h1>
+            <p>Комплексная забота о здоровье вашего ребенка с первых дней жизни</p>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Педиатрия
+    </div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2>
+        <p>В нашем центре педиатрия — это не просто осмотр и назначение лечения. Это комплексный подход к здоровью ребенка, включающий профилактику, наблюдение за развитием, консультирование родителей и формирование здоровых привычек.</p>
+        <p>Наши педиатры работают по принципу доказательной медицины, не назначают ненужные анализы и лекарства. Прием длится от 30 до 60 минут — мы уделяем время каждому пациенту.</p>
+        <h2 style="margin-top: 40px;">Услуги педиатра</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-stethoscope"></i> Приём педиатра первичный</h3><p>Осмотр, консультация, сбор анамнеза</p><div class="price">3 500 ₽ • 1 ч.</div></div>
+        <div class="service-card"><h3><i class="fas fa-redo"></i> Приём педиатра повторный</h3><p>Контроль динамики, корректировка лечения</p><div class="price">2 000 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-syringe"></i> Индивидуальный план вакцинации</h3><p>Составление индивидуального календаря прививок</p><div class="price">2 500 ₽ • 1 ч.</div></div>
+        <div class="service-card"><h3><i class="fas fa-apple-alt"></i> Нутритивный приём педиатра</h3><p>Консультация по питанию и прикорму</p><div class="price">3 000 ₽ • 55 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-laptop-medical"></i> Онлайн консультация педиатра</h3><p>Удалённая консультация врача</p><div class="price">1 500 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-home"></i> Осмотр педиатра на дому</h3><p>Выездной осмотр в пределах г. Курска</p><div class="price">5 500 ₽ • 1 ч. 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-home"></i> Осмотр на дому (второй ребёнок -30%)</h3><p>Скидка 30% при осмотре второго ребёнка</p><div class="price">3 850 ₽ • 1 ч.</div></div>
+        <div class="service-card"><h3><i class="fas fa-home"></i> Осмотр на дому (выходной/праздник)</h3><p>Выезд в выходные и праздничные дни</p><div class="price">6 500 ₽ • 1 ч. 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-home"></i> Осмотр на дому (за пределами Курска)</h3><p>Выезд в ближайший район</p><div class="price">6 500–7 500 ₽ • 1 ч. 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-baby"></i> Первичный патронаж новорождённого</h3><p>Осмотр малыша в первые дни жизни</p><div class="price">5 500 ₽ • 1 ч. 30 мин.</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Mental Health -->
+<div class="page" id="page-psihicheskoe-zdorove">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #9B59B6 0%, #8E44AD 100%);">
+        <div><h1><i class="fas fa-brain"></i> Психическое здоровье</h1><p>Психологическая поддержка для детей и родителей</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Психическое здоровье</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Мы понимаем, что здоровье ребенка невозможно отделить от эмоционального состояния семьи. Наши психологи и психотерапевты работают с детьми и родителями, помогая справляться со стрессом, тревожностью, поведенческими проблемами.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-comments"></i> Первичная консультация психолога</h3><p>Индивидуальная работа с ребёнком или родителем</p><div class="price">3 400 ₽ • 1 ч.</div></div>
+        <div class="service-card"><h3><i class="fas fa-child"></i> Психотерапевтическое занятие</h3><p>Терапия для детей через игру и творчество</p><div class="price">2 400 ₽ • 45 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-lightbulb"></i> Совет психолога (онлайн/офлайн)</h3><p>Краткая консультация по вопросу</p><div class="price">2 000 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-users"></i> Абонемент на 4 психотерап. занятия</h3><p>Комплект из 4 занятий для ребёнка</p><div class="price">9 450 ₽ • 3 ч.</div></div>
+        <div class="service-card"><h3><i class="fas fa-users"></i> Абонемент на 8 психотерап. занятий</h3><p>Комплект из 8 занятий для ребёнка</p><div class="price">16 500 ₽ • 6 ч.</div></div>
+        <div class="service-card"><h3><i class="fas fa-brain"></i> Приём детского психиатра первичный</h3><p>Осмотр, диагностика, назначение лечения</p><div class="price">5 000 ₽ • 1 ч.</div></div>
+        <div class="service-card"><h3><i class="fas fa-redo"></i> Повторный приём детского психиатра</h3><p>Контроль динамики, корректировка терапии</p><div class="price">3 000 ₽ • 30 мин.</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Therapy -->
+<div class="page" id="page-terapiya">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #27AE60 0%, #219A52 100%);">
+        <div><h1><i class="fas fa-heartbeat"></i> Терапия</h1><p>Лечение и профилактика заболеваний всей семьи</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Терапия</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Терапевтическое направление в центре MOM охватывает широкий спектр услуг для взрослых и детей. Мы придерживаемся принципа минимальной медикаментозной нагрузки и максимального комфорта для пациента.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-user-md"></i> Приём терапевта</h3><p>Диагностика, лечение, профилактика заболеваний</p><div class="price">от 2 000 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-file-medical"></i> Оформление справок</h3><p>Справки в школу, детский сад, бассейн, для выезда</p><div class="price">от 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-syringe"></i> Вакцинация</h3><p>Прививки по календарю и по показаниям</p><div class="price">от 1 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-info-circle"></i> Уточняйте полный перечень услуг и цены</h3><p>Обращайтесь по телефону +7 (4712) 36-00-61</p><div class="price">—</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Speech Therapy -->
+<div class="page" id="page-logopediya">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);">
+        <div><h1><i class="fas fa-comment-dots"></i> Логопедия</h1><p>Коррекция речевых нарушений у детей</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Логопедия</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Наши логопеды работают с детьми от 1 года до 7 лет. Мы используем современные методики коррекции речи, включающие игровые элементы, чтобы занятия были интересными и эффективными.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-diagnoses"></i> Диагностика речи</h3><p>Комплексная оценка речевого развития</p><div class="price">от 1 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-chalkboard-teacher"></i> Логопедический массаж</h3><p>Коррекция артикуляционного аппарата</p><div class="price">от 1 200 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-spell-check"></i> Коррекция звукопроизношения</h3><p>Постановка и автоматизация звуков</p><div class="price">от 1 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-info-circle"></i> Уточняйте полный перечень услуг и цены</h3><p>Обращайтесь по телефону +7 (4712) 36-00-61</p><div class="price">—</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Ultrasound -->
+<div class="page" id="page-uzi">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);">
+        <div><h1><i class="fas fa-wave-square"></i> УЗИ</h1><p>Ультразвуковая диагностика для детей и взрослых</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>УЗИ</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Ультразвуковая диагностика — безопасный и информативный метод исследования. В нашем центре используется современное оборудование, позволяющее проводить точную диагностику.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-baby"></i> Скрининговое УЗИ детей до 1 года</h3><p>Головной мозг, сердце, ОБП, ТБС, МВС</p><div class="price">6 800 ₽ • 50 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-baby"></i> Скрининговое УЗИ детей до 1 года (расшир.)</h3><p>Головной мозг, сердце, ОБП, ТБС, МВС, ШОП</p><div class="price">7 300 ₽ • 50 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-child"></i> Скрининговое УЗИ старше 1 года</h3><p>Сердце, ОБП, МВС, ЩЖ, репродуктивная система</p><div class="price">6 800 ₽ • 50 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-wave-square"></i> Эхокардиография</h3><p>УЗИ сердца для детей и взрослых</p><div class="price">2 000 ₽ • 40 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-brain"></i> Нейросонография</h3><p>УЗИ головного мозга у новорождённых</p><div class="price">2 000 ₽ • 20 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-bone"></i> УЗИ тазобедренных суставов</h3><p>Диагностика состояния тазобедренных суставов</p><div class="price">1 500 ₽ • 20 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-stomach"></i> УЗИ ОБП (комплексное)</h3><p>Пищевод, желудок, печень, поджелудочная и др.</p><div class="price">2 000 ₽ • 25 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-virus"></i> УЗИ диагностика после вирусной инфекции</h3><p>Комплексное обследование после перенесённой инфекции</p><div class="price">4 500 ₽ • 50 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-heart"></i> УЗИ щитовидной железы</h3><p>Ультразвуковое исследование щитовидной железы</p><div class="price">900 ₽ • 20 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-search"></i> УЗИ швов черепа</h3><p>Диагностика после хирургических вмешательств</p><div class="price">1 000 ₽ • 15 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-lungs"></i> УЗИ лёгких</h3><p>Ультразвуковое исследование лёгких</p><div class="price">1 500 ₽ • 20 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-female"></i> УЗИ молочных желез у детей</h3><p>Диагностика молочных желез</p><div class="price">1 500 ₽ • 15 мин.</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Physiotherapy -->
+<div class="page" id="page-fizioterapiya">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #1ABC9C 0%, #16A085 100%);">
+        <div><h1><i class="fas fa-procedures"></i> Физиотерапия</h1><p>Восстановление и укрепление здоровья</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Физиотерапия</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Физиотерапия в нашем центре направлена на восстановление функций организма, укрепление иммунитета естественным путем и профилактику заболеваний.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-running"></i> Занятие на виброплатформе Galileo</h3><p>Стимуляция сенсо-моторного развития</p><div class="price">3 500 ₽ • 40 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-chart-line"></i> Абонемент на 8 занятий Galileo</h3><p>8 занятий на виброплатформе</p><div class="price">25 000 ₽ • 5 ч. 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-child"></i> Занятие по стимуляции сенсо-моторного развития</h3><p>Разовое занятие, 30 мин.</p><div class="price">2 000 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-chart-line"></i> Абонемент на 8 занятий сенсо-моторной стимуляции</h3><p>8 занятий по 30 мин.</p><div class="price">8 000 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-spa"></i> Восстановительно-оздоровительная работа по телу</h3><p>Комплексный подход к телу ребёнка</p><div class="price">2 700 ₽ • 40 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-user-md"></i> Консультация двигательного терапевта</h3><p>Для детей старше 3–5 лет</p><div class="price">5 000 ₽ • 40 мин.</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Neurology -->
+<div class="page" id="page-nevrologiya">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #34495E 0%, #2C3E50 100%);">
+        <div><h1><i class="fas fa-brain"></i> Неврология</h1><p>Диагностика и лечение нервной системы</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Неврология</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Наши неврологи специализируются на детской неврологии. Мы проводим комплексную диагностику и лечение заболеваний нервной системы у детей всех возрастов.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-stethoscope"></i> Консультация невролога</h3><p>Осмотр, диагностика, назначение лечения</p><div class="price">от 2 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-clipboard-check"></i> Нейросонография</h3><p>УЗИ головного мозга у новорождённых</p><div class="price">2 000 ₽ • 20 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-activity"></i> ЭЭГ</h3><p>Электроэнцефалография</p><div class="price">от 2 000 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-info-circle"></i> Уточняйте полный перечень услуг и цены</h3><p>Обращайтесь по телефону +7 (4712) 36-00-61</p><div class="price">—</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Bobath Therapy -->
+<div class="page" id="page-bobat-terapiya">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);">
+        <div><h1><i class="fas fa-hands"></i> Бобат-терапия</h1><p>Нейрофизиологическая реабилитация</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Бобат-терапия</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Бобат-терапия — это концепция реабилитации, направленная на улучшение двигательных функций у детей с нарушениями нервной системы. Методика основана на понимании нормального развития движений.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-walking"></i> Занятие по Бобат-терапии (разовое)</h3><p>Индивидуальное занятие по методике Бобат</p><div class="price">3 500 ₽ • 40 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-balance-scale"></i> Занятие по методике "Баланс"</h3><p>Развитие равновесия и координации</p><div class="price">4 050 ₽ • 1 ч. / 2 000 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-child"></i> Занятие двигательной терапией (комплексное)</h3><p>Использование нескольких методик</p><div class="price">3 500 ₽ • 50 мин. / 1 500 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-chart-line"></i> Абонемент на 5 часовых занятий</h3><p>5 занятий двигательной терапией</p><div class="price">12 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-chart-line"></i> Абонемент на 8 часовых занятий</h3><p>8 занятий двигательной терапией</p><div class="price">15 800 ₽</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Massage -->
+<div class="page" id="page-massazh">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #F39C12 0%, #E67E22 100%);">
+        <div><h1><i class="fas fa-hand-sparkles"></i> Массаж</h1><p>Лечебный и профилактический массаж для детей</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Массаж</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Детский массаж — важная часть комплексного ухода за ребенком. Наши специалисты проводят массаж с первых дней жизни, помогая правильному развитию мышечного корсета и профилактике заболеваний.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-baby"></i> Общий массаж и гимнастика (ранний возраст)</h3><p>Массаж и гимнастика для младенцев</p><div class="price">950 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-baby"></i> Абонемент на 10 занятий (ранний возраст)</h3><p>Комплект из 10 массажей и гимнастик</p><div class="price">9 500 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-child"></i> Общий медицинский массаж (3–8 лет)</h3><p>Медицинский массаж для детей дошкольного возраста</p><div class="price">950 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-child"></i> Общий медицинский массаж (9–15 лет)</h3><p>Медицинский массаж для детей и подростков</p><div class="price">1 050 ₽ • 40 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-home"></i> Выезд на дом (ранний возраст)</h3><p>Массаж и гимнастика с выездом на дом</p><div class="price">1 300 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-home"></i> Абонемент на 10 занятий (выезд на дом)</h3><p>10 занятий массажа и гимнастики с выездом</p><div class="price">13 000 ₽ • 30 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-spine"></i> Массаж при заболеваниях нервной системы</h3><p>Для детей 3–8 лет, 40 мин.</p><div class="price">950 ₽ • 40 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-bone"></i> Массаж при заболеваниях ОДА</h3><p>Для детей раннего возраста и 3–8 лет</p><div class="price">950 ₽ • 40 мин.</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Vojta Therapy -->
+<div class="page" id="page-voyta-terapiya">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #16A085 0%, #138D75 100%);">
+        <div><h1><i class="fas fa-running"></i> Войта-терапия</h1><p>Активация врожденных движений</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Войта-терапия</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Войта-терапия — это методика, основанная на активации врожденных программ движения через определенные точки на теле ребенка. Метод эффективен при различных неврологических нарушениях.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-hand-point-up"></i> Войта-терапия (разовое занятие)</h3><p>Индивидуальное занятие по методике Войта</p><div class="price">2 500 ₽ • 50 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-home"></i> Войта-терапия (на дому)</h3><p>Выездное занятие по методике Войта</p><div class="price">5 000 ₽ • 50 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-chart-line"></i> Курс Войта-терапии (стандарт)</h3><p>Курс из 10 занятий</p><div class="price">25 000 ₽ • 50 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-chart-line"></i> Курс Войта-терапии (21 день)</h3><p>Интенсивный 21-дневный курс</p><div class="price">52 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-chart-line"></i> Курс Войта + Galileo</h3><p>Комбинированный курс с виброплатформой</p><div class="price">35 000 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-search"></i> Войта-диагностика</h3><p>Первичная диагностика по методике Войта</p><div class="price">3 500 ₽ • 1 ч.</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+
+<!-- Hippotherapy -->
+<div class="page" id="page-ippoterapiya">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #8B6914 0%, #6B530E 100%);">
+        <div><h1><i class="fas fa-horse"></i> Иппотерапия</h1><p>Лечение с помощью лошадей</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Иппотерапия</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2><p>Иппотерапия — метод реабилитации с использованием лошади как терапевтического инструмента. Занятия проводятся под руководством сертифицированных специалистов.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-horse-head"></i> Индивидуальное занятие</h3><p>Занятие на лошади с инструктором</p><div class="price">3 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-users"></i> Групповое занятие</h3><p>Занятие в мини-группе</p><div class="price">2 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-info-circle"></i> Уточняйте расписание и запись</h3><p>Обращайтесь по телефону +7 (4712) 36-00-61</p><div class="price">—</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+
+        <div class="ippogallery-section">
+            <h2 style="text-align: center; color: var(--primary); margin-bottom: 30px;"><i class="fas fa-images"></i> Галерея занятий</h2>
+            <div class="ippogallery-wrapper">
+                <div class="ippogallery-track">
+                    <img src="images/ippoterapiya_19.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_20.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_21.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_22.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_23.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_24.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_25.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_26.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_27.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_28.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_29.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_30.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_19.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_20.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_21.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_22.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_23.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_24.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_25.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_26.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_27.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_28.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_29.jpg" alt="Иппотерапия">
+                    <img src="images/ippoterapiya_30.jpg" alt="Иппотерапия">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="page" id="page-prices">
+  <section class="section">
+    <div class="container">
+      <a class="back-link" onclick="showPage('home')">← Назад на главную</a>
+      <h2 class="section-title">Прайс-лист</h2>
+      <p style="text-align:center;color:var(--text-light);max-width:700px;margin:0 auto 40px;">Актуальные цены на все услуги центра MOM. Точная стоимость определяется после консультации специалиста.</p>
+      <div class="price-tabs">
+        <button class="price-tab active" id="tab-consult" onclick="switchPriceTab('consult')">Консультации</button>
+        <button class="price-tab" id="tab-diag" onclick="switchPriceTab('diag')">Диагностика</button>
+        <button class="price-tab" id="tab-therapy" onclick="switchPriceTab('therapy')">Терапия</button>
+        <button class="price-tab" id="tab-massage" onclick="switchPriceTab('massage')">Массаж</button>
+        <button class="price-tab" id="tab-other" onclick="switchPriceTab('other')">Программы</button>
+      </div>
+      <div class="price-section active" id="price-consult">
+        <div class="price-category"><h3>Педиатрия</h3></div>
+        <div class="price-row"><span class="price-name">Прием педиатра первичный (1 ч)</span><span class="price-value">3 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Прием педиатра первичный сокращенный (30 мин)</span><span class="price-value">2 100 ₽</span></div>
+        <div class="price-row"><span class="price-name">Прием педиатра повторный (30 мин)</span><span class="price-value">2 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Онлайн консультация педиатра (30 мин)</span><span class="price-value">1 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Нутритивный прием педиатра (55 мин)</span><span class="price-value">3 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Индивидуальный план вакцинации (1 ч)</span><span class="price-value">2 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Первичный патронаж новорожденному (1 ч 30 мин)</span><span class="price-value">5 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Осмотр педиатра на дому (1 ч 30 мин)</span><span class="price-value">5 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Осмотр на дому выходной/праздник (1 ч 30 мин)</span><span class="price-value">6 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Осмотр на дому 2-й ребенок -30% (1 ч)</span><span class="price-value">3 850 ₽</span></div>
+        <div class="price-category"><h3>Психология</h3></div>
+        <div class="price-row"><span class="price-name">Первичная консультация психолога (1 ч)</span><span class="price-value">3 400 ₽</span></div>
+        <div class="price-row"><span class="price-name">Психотерапевтическое занятие (45 мин)</span><span class="price-value">2 400 ₽</span></div>
+        <div class="price-row"><span class="price-name">"Совет психолога" онлайн/офлайн (30 мин)</span><span class="price-value">2 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Абонемент 4 психотерапевтических занятия (3 ч)</span><span class="price-value">9 450 ₽</span></div>
+        <div class="price-row"><span class="price-name">Абонемент 8 психотерапевтических занятий (6 ч)</span><span class="price-value">16 500 ₽</span></div>
+        <div class="price-category"><h3>Психиатрия</h3></div>
+        <div class="price-row"><span class="price-name">Первичный прием психиатра 18-80 лет (1 ч)</span><span class="price-value">5 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Первичный прием детского психиатра (1 ч)</span><span class="price-value">5 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Повторный прием психиатра (30 мин)</span><span class="price-value">3 000 ₽</span></div>
+        <div class="price-category"><h3>Эндокринология</h3></div>
+        <div class="price-row"><span class="price-name">Консультация эндокринолога первичная (1 ч)</span><span class="price-value">3 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Консультация эндокринолога сокращенная (30 мин)</span><span class="price-value">2 100 ₽</span></div>
+        <div class="price-category"><h3>Консультации Каплиной К.Р.</h3></div>
+        <div class="price-row"><span class="price-name">Консультация (30 мин)</span><span class="price-value">2 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Консультация Каплиной К.Р. (50 мин)</span><span class="price-value">5 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Консультация по адаптации первые месяцы (55 мин)</span><span class="price-value">5 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Консультация по хэндлингу/сенсорному развитию (55 мин)</span><span class="price-value">5 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Консультация по моторному развитию (55 мин)</span><span class="price-value">5 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Онлайн консультация (1 ч)</span><span class="price-value">5 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Курс для будущих родителей</span><span class="price-value">75 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Индивидуальное сопровождение "Донашивание"</span><span class="price-value">67 500 ₽</span></div>
+      </div>
+      <div class="price-section" id="price-diag">
+        <div class="price-category"><h3>УЗИ Детское</h3></div>
+        <div class="price-row"><span class="price-name">Скрининговое УЗИ до года (50 мин)</span><span class="price-value">6 800 ₽</span></div>
+        <div class="price-row"><span class="price-name">Скрининговое УЗИ старше года (50 мин)</span><span class="price-value">6 800 ₽</span></div>
+        <div class="price-row"><span class="price-name">Нейросонография (20 мин)</span><span class="price-value">2 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Эхокардиография (40 мин)</span><span class="price-value">2 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ тазобедренных суставов (20 мин)</span><span class="price-value">1 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ ОБП комплексное (25 мин)</span><span class="price-value">2 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ щитовидной железы (20 мин)</span><span class="price-value">900 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ почек и надпочечников (20 мин)</span><span class="price-value">1 800 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ мочевого пузыря (20 мин)</span><span class="price-value">1 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ МВС комплексное (20 мин)</span><span class="price-value">2 000 ₽</span></div>
+        <div class="price-category"><h3>УЗИ для мамы</h3></div>
+        <div class="price-row"><span class="price-name">УЗИ для мамы 1-2 (МЖ+ЩЖ+почки)</span><span class="price-value">5 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ для мамы-12 (БП+ЩЖ+МЖ+вены)</span><span class="price-value">8 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ для мамы-6 (МЖ+ЩЖ+БП, 1 ч 10 мин)</span><span class="price-value">5 500 ₽</span></div>
+        <div class="price-category"><h3>УЗИ Взрослые</h3></div>
+        <div class="price-row"><span class="price-name">УЗИ молочных желез (20 мин)</span><span class="price-value">1 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ молочных желез с л/у (30 мин)</span><span class="price-value">2 100 ₽</span></div>
+        <div class="price-row"><span class="price-name">Эхокардиография (25 мин)</span><span class="price-value">2 950 ₽</span></div>
+        <div class="price-row"><span class="price-name">УЗИ органов брюшной полости комплексное</span><span class="price-value">2 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Комплексное УЗИ внутренних органов</span><span class="price-value">3 300 ₽</span></div>
+      </div>
+      <div class="price-section" id="price-therapy">
+        <div class="price-category"><h3>Двигательная терапия</h3></div>
+        <div class="price-row"><span class="price-name">Войта-диагностика (1 ч)</span><span class="price-value">3 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Войта-терапия (50 мин)</span><span class="price-value">2 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Войта-терапия на дому (50 мин)</span><span class="price-value">5 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Занятие по Бобат-терапии (40 мин)</span><span class="price-value">3 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Занятие на виброплатформе Galileo (40 мин)</span><span class="price-value">3 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Занятие двигательной терапией (50 мин)</span><span class="price-value">3 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Занятие по методике "Баланс" (1 ч)</span><span class="price-value">4 050 ₽</span></div>
+        <div class="price-row"><span class="price-name">Занятие по стимуляции сенсо-моторного развития (30 мин)</span><span class="price-value">2 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Коррекция дисфункций опорно-двигательного аппарата (1 ч)</span><span class="price-value">4 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Консультация двигательного терапевта (40 мин)</span><span class="price-value">5 000 ₽</span></div>
+        <div class="price-category"><h3>Курсы</h3></div>
+        <div class="price-row"><span class="price-name">"Движение в каждом дне"</span><span class="price-value">68 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Курс Войта-терапии (50 мин)</span><span class="price-value">25 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Курс Войта-терапии 21 день</span><span class="price-value">52 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Курс Войта+Galileo</span><span class="price-value">35 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">"Мама 911"</span><span class="price-value">10 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">"Мама 911" индивидуальный</span><span class="price-value">15 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">"Мама 911" семейный</span><span class="price-value">18 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">"Речь через движение"</span><span class="price-value">63 000 ₽</span></div>
+        <div class="price-category"><h3>Аквапатронаж</h3></div>
+        <div class="price-row"><span class="price-name">Аквапатронаж (30 мин)</span><span class="price-value">2 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Абонемент 5 занятий</span><span class="price-value">10 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Абонемент 8 занятий</span><span class="price-value">16 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Абонемент 10 занятий</span><span class="price-value">20 000 ₽</span></div>
+      </div>
+      <div class="price-section" id="price-massage">
+        <div class="price-category"><h3>Массаж детский</h3></div>
+        <div class="price-row"><span class="price-name">Общий массаж и гимнастика абонемент 10 занятий (30 мин)</span><span class="price-value">9 500 ₽</span></div>
+        <div class="price-row"><span class="price-name">Общий массаж медицинский 3-8 лет (30 мин)</span><span class="price-value">950 ₽</span></div>
+        <div class="price-row"><span class="price-name">Общий массаж медицинский 9-15 лет (40 мин)</span><span class="price-value">1 050 ₽</span></div>
+        <div class="price-row"><span class="price-name">Массаж воротниковой зоны (15 мин)</span><span class="price-value">350 ₽</span></div>
+        <div class="price-row"><span class="price-name">Массаж при заболеваниях нервной системы (40 мин)</span><span class="price-value">950 ₽</span></div>
+        <div class="price-row"><span class="price-name">Массаж при заболеваниях опорно-двигательного аппарата (40 мин)</span><span class="price-value">950 ₽</span></div>
+        <div class="price-row"><span class="price-name">Массаж передней брюшной стенки (15 мин)</span><span class="price-value">320 ₽</span></div>
+        <div class="price-category"><h3>Грудное вскармливание</h3></div>
+        <div class="price-row"><span class="price-name">Консультация по ГВ (1 ч)</span><span class="price-value">4 050 ₽</span></div>
+        <div class="price-row"><span class="price-name">Выездная консультация по ГВ (1 ч 30 мин)</span><span class="price-value">5 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Выездная консультация по ГВ за городом (1 ч 30 мин)</span><span class="price-value">6 800 ₽</span></div>
+        <div class="price-row"><span class="price-name">Консультация онлайн по ГВ (1 ч)</span><span class="price-value">2 700 ₽</span></div>
+      </div>
+      <div class="price-section" id="price-other">
+        <div class="price-category"><h3>Чаты с врачом</h3></div>
+        <div class="price-row"><span class="price-name">Педиатр — подписка 30 дней 24/7</span><span class="price-value">10 000 ₽</span></div>
+        <div class="price-row"><span class="price-name">Педиатр — подписка на месяц</span><span class="price-value">1 800 ₽</span></div>
+        <div class="price-row"><span class="price-name">Чат с педиатром сокращенный 10 дней</span><span class="price-value">1 000 ₽</span></div>
+      </div>
+      <div style="text-align: center; margin-top: 50px;" margin-bottom: 30px;">
+        <a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" 
+           style="display: inline-block; padding: 18px 50px; background: linear-gradient(135deg, #6B8EC6, #D8457A); 
+           color: white; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 17px; 
+           box-shadow: 0 8px 25px rgba(107, 142, 198, 0.4); transition: all 0.3s;">
+          Записаться на прием
+        </a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-articles">
+  <section class="section">
+    <div class="container">
+      <a class="back-link" onclick="showPage('home')">← Назад на главную</a>
+      <h2 class="section-title">Полезные статьи</h2>
+      <p style="text-align:center;color:var(--text-light);max-width:700px;margin:0 auto 40px;">Советы от наших специалистов по здоровью, развитию и воспитанию детей.</p>
+      <div class="articles-grid">
+        <article class="article-card" onclick="showPage('article-prikorm')">
+          <div class="article-image" style="overflow:hidden;"><img src="images/image_048.png" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
+          <div class="article-content"><span class="article-tag">Питание</span><h3>Прикорм: с чего начать?</h3><p>Первый прикорм — важный этап в жизни малыша.</p><span class="article-date">15 июня 2025</span></div>
+        </article>
+        <article class="article-card" onclick="showPage('article-son')">
+          <div class="article-image" style="overflow:hidden;"><img src="images/image_049.png" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
+          <div class="article-content"><span class="article-tag">Сон</span><h3>Здоровый сон ребенка</h3><p>Как наладить режим дня и помочь малышу спокойно засыпать.</p><span class="article-date">10 июня 2025</span></div>
+        </article>
+        <article class="article-card" onclick="showPage('article-massazh')">
+          <div class="article-image" style="overflow:hidden;"><img src="images/image_050.png" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
+          <div class="article-content"><span class="article-tag">Массаж</span><h3>Детский массаж</h3><p>Показания и противопоказания.</p><span class="article-date">5 июня 2025</span></div>
+        </article>
+        <article class="article-card" onclick="showPage('article-rech')">
+          <div class="article-image" style="overflow:hidden;"><img src="images/image_051.png" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
+          <div class="article-content"><span class="article-tag">Развитие</span><h3>Развитие речи: нормы и отклонения</h3><p>Как развивается речь у детей и когда стоит бить тревогу.</p><span class="article-date">28 мая 2025</span></div>
+        </article>
+        <article class="article-card" onclick="showPage('article-dvigatelka')">
+          <div class="article-image" style="overflow:hidden;"><img src="images/image_052.png" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
+          <div class="article-content"><span class="article-tag">Развитие</span><h3>Двигательное развитие</h3><p>От первых движений до уверенной ходьбы — путь вашего малыша.</p><span class="article-date">20 мая 2025</span></div>
+        </article>
+        <article class="article-card" onclick="showPage('article-stopy')">
+          <div class="article-image" style="overflow:hidden;"><img src="images/image_053.png" style="width:100%;height:100%;object-fit:cover;" alt=""></div>
+          <div class="article-content"><span class="article-tag">Здоровье</span><h3>Плоскостопие: профилактика и лечение</h3><p>Здоровье детских ножек — основа правильной осанки.</p><span class="article-date">12 мая 2025</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-ankety">
+  <section class="section" style="position:relative;overflow:hidden;">
+    <div class="floating-circle" style="width: 200px; height: 200px; background: linear-gradient(135deg, #f06292, #ffb6c1); top: 10%; right: -50px; animation-delay: 0s;"></div>
+    <div class="floating-circle" style="width: 150px; height: 150px; background: linear-gradient(135deg, #4A86C1, #A8D5A2); bottom: 15%; left: -40px; animation-delay: 2s;"></div>
+    <div class="container">
+      <a class="back-link" onclick="showPage('home')">← Назад на главную</a>
+      <h2 class="section-title">Медицинские анкеты</h2>
+      <p style="text-align:center;color:var(--text-light);max-width:700px;margin:0 auto 40px;">Заполните анкету перед первым визитом к специалисту.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:30px;justify-content:center;">
+        <div class="service-card" style="max-width:400px;text-align:center;">
+          <div style="font-size:48px;margin-bottom:15px;">👶</div>
+          <h3>Анкета для педиатра</h3>
+          <p>Для детей от 0 до 18 лет.</p>
+          <a class="btn btn-primary" onclick="showPage('anketa-pediatr')" style="margin-top:15px;">Заполнить</a>
+        </div>
+        <div class="service-card" style="max-width:400px;text-align:center;">
+          <div style="font-size:48px;margin-bottom:15px;">🧠</div>
+          <h3>Анкета для невролога</h3>
+          <p>О развитии ребенка.</p>
+          <a class="btn btn-primary" onclick="showPage('anketa-nevrolog')" style="margin-top:15px;">Заполнить</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="page" id="page-privacy">
+  <section class="section">
+    <div class="container">
+      <a class="back-link" onclick="showPage('home')">← Назад</a>
+      <h2 class="section-title">Политика конфиденциальности</h2>
+      <div style="max-width:800px;margin:0 auto;background:var(--white);padding:40px;border-radius:var(--radius);">
+        <h3 style="color:var(--primary);">1. Общие положения</h3>
+        <p>Настоящая Политика действует в отношении всей информации, которую центр MOM может получить о Пользователе.</p>
+        <h3 style="color:var(--primary);margin-top:20px;">2. Персональные данные</h3>
+        <p>Центр может собирать: ФИО, телефон, email, дату рождения, сведения о здоровье.</p>
+        <h3 style="color:var(--primary);margin-top:20px;">3. Цели обработки</h3>
+        <p>Запись на прием, оказание услуг, информирование (с согласия), обратная связь.</p>
+        <h3 style="color:var(--primary);margin-top:20px;">4. Защита данных</h3>
+        <p>Центр принимает необходимые меры для защиты персональных данных.</p>
+        <h3 style="color:var(--primary);margin-top:20px;">5. Контакты</h3>
+        <p><strong>Тел:</strong> +7 (4712) 36-00-61<br><strong>Адрес:</strong> г. Курск, ул. Л. Толстого, д. 21, пом III</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+
+<!-- Enhanced Chat Bot -->
+
+
+
+
+<!-- ==================== ADDITIONAL PAGES ==================== -->
+<div class="page" id="page-endokrinologiya">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #8E44AD 0%, #9B59B6 100%);">
+        <div><h1><i class="fas fa-weight"></i> Эндокринология</h1><p>Диагностика и лечение эндокринных заболеваний у детей и взрослых</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Эндокринология</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2>
+        <p>В нашем центре проводится комплексное обследование при нарушениях роста, полового развития, сахарном диабете, заболеваниях щитовидной железы и надпочечников. Эндокринная система играет ключевую роль в развитии организма ребёнка, регулируя обмен веществ, рост, половое созревание и многие другие важные процессы.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-user-md"></i> Консультация эндокринолога первичная</h3><p>Осмотр, диагностика, назначение лечения</p><div class="price">3 000 ₽ • 1 ч.</div></div>
+        <div class="service-card"><h3><i class="fas fa-user-md"></i> Консультация эндокринолога сокращённая</h3><p>Краткая первичная консультация</p><div class="price">2 100 ₽ • 30 мин.</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+<div class="page" id="page-neyropsihologiya">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #E67E22 0%, #D35400 100%);">
+        <div><h1><i class="fas fa-puzzle-piece"></i> Нейропсихология</h1><p>Диагностика и коррекция познавательных функций ребёнка</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Нейропсихология</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О направлении</h2>
+        <p>Нейропсихологическая диагностика и коррекция направлены на выявление и развитие познавательных функций ребенка. Мы проводим комплексную оценку памяти, внимания, мышления, речи и моторики. Наши специалисты используют современные методики диагностики, которые помогают выявить особенности развития нервной системы ребёнка и разработать эффективную программу коррекции.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-user-md"></i> Консультация нейропсихолога</h3><p>Осмотр, диагностика, назначение программы</p><div class="price">от 2 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-clipboard-check"></i> Комплексная диагностика</h3><p>Оценка памяти, внимания, мышления, речи, моторики</p><div class="price">от 3 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-chalkboard-teacher"></i> Коррекционные занятия</h3><p>Индивидуальные занятия по разработанной программе</p><div class="price">от 2 000 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-users"></i> Консультация родителей</h3><p>Рекомендации по развитию ребенка дома</p><div class="price">от 1 500 ₽</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+<div class="page" id="page-first-42-days">
+    <div class="direction-hero" style="background: linear-gradient(135deg, #F39C12 0%, #E67E22 100%);">
+        <div><h1><i class="fas fa-baby-carriage"></i> Школа первых 42 дней</h1><p>Поддержка молодых родителей в первые критические дни жизни малыша</p></div>
+    </div>
+    <div class="breadcrumb"><a onclick="showPage('home')">Главная</a><span>/</span><a onclick="showPage('directions')">Услуги</a><span>/</span>Школа первых 42 дней</div>
+    <div class="direction-content">
+        <a class="back-btn" onclick="showPage('home')"><i class="fas fa-arrow-left"></i>Вернуться на главную</a>
+        <h2>О программе</h2>
+        <p>Школа для новорождённых — это специальная программа поддержки молодых родителей в первые критические 42 дня жизни малыша. Наши специалисты помогут вам наладить грудное вскармливание, научат уходу за новорождённым, подскажут как распознать тревожные симптомы и когда нужно обращаться к врачу. Первые шесть недель жизни ребёнка — это уникальный период, когда закладываются основы здоровья, привязанности и гармоничного развития.</p>
+        <h2 style="margin-top: 40px;">Услуги</h2>
+        <div class="service-cards"><div class="service-card"><h3><i class="fas fa-baby"></i> Консультация неонатолога</h3><p>Осмотр новорождённого, оценка состояния здоровья</p><div class="price">от 2 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-hands-helping"></i> Индивидуальное сопровождение "Донашивание"</h3><p>Сопровождение ребёнка первых месяцев жизни</p><div class="price">67 500 ₽</div></div>
+        <div class="service-card"><h3><i class="fas fa-heart"></i> Консультация по хэндлингу и развитию младенца</h3><p>Особенности сенсорного и моторного развития</p><div class="price">5 500 ₽ • 55 мин.</div></div>
+        <div class="service-card"><h3><i class="fas fa-baby-carriage"></i> Первичный патронаж новорождённого</h3><p>Осмотр малыша в первые дни жизни</p><div class="price">5 500 ₽ • 1 ч. 30 мин.</div></div></div>
+        <div style="text-align: center; margin-top: 50px;"><a href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank" rel="noopener" class="btn btn-primary"><i class="fas fa-calendar-check"></i>Записаться на прием</a></div>
+    </div>
+</div>
+<div class="page" id="page-article-prikorm">
+<div class="container">
+
+  <div class="page-header">
+    <h1>🍎 Прикорм: Когда и с чего начинать?</h1>
+    <p>Полное руководство по введению первого прикорма для вашего малыша</p>
+  </div>
+
+  <div class="btn-wrap" style="text-align:left;">
+    <a class="btn btn-back" onclick="showPage('articles')">← Назад к статьям</a>
+  </div>
+
+  <div class="card">
+    <div class="article-content">
+      <p>Введение прикорма — важный этап в жизни каждого малыша. От того, как и когда начнётся знакомство ребёнка с новой пищей, зависит его дальнейшее отношение к еде, здоровье пищеварительной системы и общее физическое развитие. В этой статье мы подробно разберём все аспекты введения прикорма, опираясь на рекомендации ВОЗ и опыт ведущих педиатров.</p>
+
+      <h3>В каком возрасте начинать?</h3>
+      <p>Согласно рекомендациям Всемирной организации здравоохранения (ВОЗ), прикорм следует начинать <strong>с 6 месяцев</strong>. К этому возрасту пищеварительная система малыша достаточно созрела для переваривания новой пищи, и ребёнок физиологически готов к приёму пищи ложкой.</p>
+      <p>До 6 месяцев достаточно грудного молока или адаптированной смеси, которые полностью обеспечивают все потребности ребёнка в питательных веществах. Раннее введение прикорма (до 4 месяцев) может перегрузить почки и пищеварительную систему, а также повысить риск развития аллергии.</p>
+
+      <div class="highlight-box">
+        <strong>💡 Важно:</strong> ВОЗ рекомендует исключительно грудное вскармливание первые 6 месяцев жизни, без добавления воды, чая, соков или других продуктов.
+      </div>
+
+      <h3>С чего начать?</h3>
+      <p>Традиционно первым прикормом рекомендуется <strong>овощное пюре</strong>. Кабачок, брокколи или цветная капуста — идеальные варианты для начала. Овощи богаты витаминами, минералами и клетчаткой, легко усваиваются и редко вызывают аллергию.</p>
+      <p>Начинайте с одного овоща, вводя его в течение 3-5 дней. Это позволит отследить реакцию организма и выявить возможную непереносимость. После успешного введения первого овоща можно добавлять другие — морковь, тыкву, картофель.</p>
+      <p>После овощей в рацион постепенно добавляют каши (безглютеновые — гречневую, кукурузную, рисовую), затем фруктовое пюре, мясное пюре, творог, яичный желток и рыбу.</p>
+
+      <h3>Признаки готовности</h3>
+      <p>Прежде чем начинать прикорм, убедитесь, что ваш малыш действительно к нему готов. Вот ключевые признаки:</p>
+      <p>✅ <strong>Возраст 6 месяцев и старше</strong> — пищеварительная система созрела</p>
+      <p>✅ <strong>Ребёнок уверенно держит голову</strong> — может сидеть с поддержкой</p>
+      <p>✅ <strong>Появился интерес к еде</strong> — тянется к вашей тарелке, следит за ложкой</p>
+      <p>✅ <strong>Возникает выталкивающий рефлекс</strong> — ребёнок может заглатывать пищу с ложки</p>
+      <p>✅ <strong>Удвоение веса</strong> — малыш набрал в два раза больше веса, чем при рождении</p>
+
+      <h3>Правила введения прикорма</h3>
+      <p>🔹 <strong>Начинайте с малого</strong> — первая порция должна быть ½ чайной ложки</p>
+      <p>🔹 <strong>Увеличивайте постепенно</strong> — добавляйте по ½-1 чайной ложке ежедневно</p>
+      <p>🔹 <strong>Один новый продукт за раз</strong> — наблюдайте за реакцией 3-5 дней</p>
+      <p>🔹 <strong>Вводите утром</strong> — легче отследить реакцию в течение дня</p>
+      <p>🔹 <strong>Не добавляйте соль и сахар</strong> — детская пища должна быть натуральной</p>
+      <p>🔹 <strong>Поддерживайте грудное вскармливание</strong> — прикорм дополняет, а не заменяет молоко</p>
+      <p>🔹 <strong>Готовьте свежим</strong> — лучше готовить перед едой, не хранить долго</p>
+
+      <h3>Таблица введения прикорма</h3>
+      <table class="table-intro">
+        <tr><th>Возраст</th><th>Продукты</th><th>Консистенция</th><th>Частота</th></tr>
+        <tr><td>6 месяцев</td><td>Овощные пюре</td><td>Жидкое пюре</td><td>1 раз в день</td></tr>
+        <tr><td>6-7 месяцев</td><td>Каши, фрукты</td><td>Густое пюре</td><td>2 раза в день</td></tr>
+        <tr><td>7-8 месяцев</td><td>Мясо, творог</td><td>Пюре с мелкими кусочками</td><td>2-3 раза в день</td></tr>
+        <tr><td>8-9 месяцев</td><td>Рыба, яйцо</td><td>Мелкие кусочки</td><td>3 раза в день</td></tr>
+        <tr><td>10-12 месяцев</td><td>Кефир, сыр</td><td>Мелко нарезанная еда</td><td>3-4 раза в день</td></tr>
+      </table>
+
+      <p>Помните, что каждый ребёнок уникален, и эти сроки носят рекомендательный характер. Всегда консультируйтесь с вашим педиатром перед началом прикорма, особенно если у малыша есть особенности здоровья или аллергические реакции. В центре MOM наши специалисты помогут составить индивидуальный план введения прикорма именно для вашего ребёнка.</p>
+    </div>
+  </div>
+
+  <div class="btn-wrap">
+    <a class="btn btn-primary" href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank">📅 Записаться на консультацию</a>
+  </div>
+
+
+  </div>
+
+</div>
+<div class="page" id="page-article-massazh">
+<div class="container">
+
+  <div class="page-header">
+    <h1>👐 Польза детского массажа</h1>
+    <p>Как массаж помогает вашему малышу расти здоровым и счастливым</p>
+  </div>
+
+  <div class="btn-wrap" style="text-align:left;">
+    <a class="btn btn-back" onclick="showPage('articles')">← Назад к статьям</a>
+  </div>
+
+  <div class="card">
+    <div class="article-content">
+      <p>Детский массаж — это не только приятная процедура, но и мощный терапевтический инструмент, который сопровождает развитие ребёнка с самых первых дней жизни. Правильно выполненный массаж способствует физическому и нервно-психическому развитию, укрепляет иммунитет и помогает организму малыша адаптироваться к новым условиям жизни.</p>
+      <p>В нашей статье мы подробно расскажем о пользе детского массажа, когда и как начинать занятия, какие техники существуют, а также о противопоказаниях и правилах подготовки к процедуре.</p>
+
+      <h3>Зачем нужен массаж?</h3>
+      <p>Детский массаж оказывает комплексное воздействие на организм малыша:</p>
+      <p>🌟 <strong>Улучшает мышечный тонус</strong> — при гипертонусе массаж помогает расслабить напряжённые мышцы, а при гипотонусе — активизирует и укрепляет их. Регулярные занятия помогают нормализовать тонус, что особенно важно в первые месяцы жизни.</p>
+      <p>🌟 <strong>Стимулирует кровообращение</strong> — массажные движения улучшают приток крови к тканям, обеспечивая лучшее питание органов и ускоряя обменные процессы.</p>
+      <p>🌟 <strong>Укрепляет иммунитет</strong> — воздействие на лимфатическую систему помогает организму бороться с инфекциями, активизируя защитные силы.</p>
+      <p>🌟 <strong>Улучшает сон</strong> — после массажа малыши лучше засыпают и спят глубже. Массаж снимает напряжение, накопленное за день, и способствует расслаблению.</p>
+      <p>🌟 <strong>Стимулирует нервную систему</strong> — тактильные ощущения во время массажа развивают сенсорное восприятие, координацию движений и моторику.</p>
+      <p>🌟 <strong>Помогает при коликах</strong> — особые техники массажа животика облегчают газоотделение и снимают спазмы, уменьшая дискомфорт у малыша.</p>
+
+      <h3>Когда начинать?</h3>
+      <p>Первый массаж можно начинать уже <strong>с 3-4 недель жизни</strong>, при условии, что малыш здоров и нет противопоказаний. Начинайте с лёгких поглаживающих движений по спинке, ручкам и ножкам, постепенно усложняя технику.</p>
+      <p>Для недоношенных детей и малышей с особенностями развития начало массажа следует согласовать с педиатром. В нашем центре специалисты подберут индивидуальную программу для каждого ребёнка.</p>
+
+      <div class="highlight-box">
+        <strong>💡 Совет:</strong> Оптимальное время для массажа — утро или первый период бодрствования после сна, когда малыш активен и находится в хорошем настроении.
+      </div>
+
+      <h3>Основные техники</h3>
+      <p>👐 <strong>Поглаживание</strong> — самое мягкое и приятное движение. Выполняется ладонью или пальцами по направлению к лимфатическим узлам. Расслабляет мышцы, улучшает кровообращение.</p>
+      <p>👐 <strong>Растирание</strong> — более интенсивное движение, выполняемое круговыми или спиральными движениями. Разогревает мышцы, улучшает эластичность тканей.</p>
+      <p>👐 <strong>Разминание</strong> — глубокое воздействие на мышечную ткань. Используется для работы с повышенным тонусом, способствует расслаблению напряжённых мышц.</p>
+      <p>👐 <strong>Потряхивание и поколачивание</strong> — выполняются лёгкими постукиваниями по мышцам. Тонизируют мышцы, стимулируют кровообращение.</p>
+      <p>👐 <strong>Массаж животика</strong> — круговые движения по часовой стрелке вокруг пупка. Помогает при запорах и коликах.</p>
+
+      <h3>Противопоказания</h3>
+      <div class="warning-box">
+        <p>⚠️ <strong>Температура тела выше 37.5°C</strong></p>
+        <p>⚠️ <strong>Острые инфекционные заболевания</strong></p>
+        <p>⚠️ <strong>Высыпания, воспаления на коже</strong></p>
+        <p>⚠️ <strong>Тяжёлые заболевания сердца и лёгких</strong></p>
+        <p>⚠️ <strong>Гематологические заболевания</strong></p>
+        <p>⚠️ <strong>Первые 3 дня после вакцинации</strong></p>
+      </div>
+      <p>При наличии хронических заболеваний массаж следует проводить только после консультации с врачом и под его наблюдением.</p>
+
+      <h3>Как подготовиться к массажу?</h3>
+      <p>🌡️ <strong>Комната должна быть тёплой</strong> — оптимальная температура 22-24°C</p>
+      <p>🌡️ <strong>Подготовьте чистое полотенце или пелёнку</strong> — мягкую и удобную</p>
+      <p>🌡️ <strong>Используйте детское масло</strong> — гипоаллергенное, без запаха</p>
+      <p>🌡️ <strong>Снимите украшения с рук</strong> — кольца, браслеты могут поцарапать кожу</p>
+      <p>🌡️ <strong>Умойте руки</strong> — тёплой водой с мылом, подсушите полотенцем</p>
+      <p>🌡️ <strong>Начинайте с 5-10 минут</strong> — постепенно увеличивая до 15-20 минут</p>
+      <p>🌡️ <strong>Наблюдайте за реакцией малыша</strong> — при плаче или беспокойстве прекратите массаж</p>
+
+      <p>Детский массаж — это не только забота о здоровье, но и прекрасная возможность установить глубокую эмоциональную связь с вашим малышом. Регулярные занятия делают ребёнка более спокойным, уверенным и счастливым. В центре MOM наши специалисты проводят профессиональный детский массаж, учитывая все индивидуальные особенности каждого маленького пациента.</p>
+    </div>
+  </div>
+
+  <div class="btn-wrap">
+    <a class="btn btn-primary" href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank">📅 Записаться на массаж</a>
+  </div>
+
+
+  </div>
+
+</div>
+<div class="page" id="page-article-rech">
+<div class="container">
+
+  <div class="page-header">
+    <h1>🗣️ Развитие речи: нормы и отклонения</h1>
+    <p>Как развивается речь у детей и когда стоит бить тревогу</p>
+  </div>
+
+  <div class="btn-wrap" style="text-align:left;">
+    <a class="btn btn-back" onclick="showPage('articles')">← Назад к статьям</a>
+  </div>
+
+  <div class="card">
+    <div class="article-content">
+      <p>Речевое развитие — один из важнейших показателей нервно-психического развития ребёнка. Родители с нетерпением ждут первых слов малыша, переживают, если они задерживаются, и гордятся каждым новым словом в детском словаре. Но как понять, что речь развивается нормально, а когда пора обращаться к специалисту?</p>
+      <p>В этой статье мы подробно рассмотрим этапы речевого развития, нормы по возрастам, признаки возможных отклонений и дадим практические советы, как помочь вашему малышу научиться говорить.</p>
+
+      <h3>Этапы развития речи</h3>
+      <p>Речевое развитие начинается с первых дней жизни и проходит несколько важных этапов. Каждый этап готовит почву для следующего, и нарушения на любом из них могут сказаться на дальнейшем развитии.</p>
+      <p>🔹 <strong>Передречевой период (0-12 месяцев)</strong> — малыш слушает звуки окружающего мира, реагирует на голос мамы, начинает лепетать, произносит первые слоги "га-га", "ба-ба", "ма-ма".</p>
+      <p>🔹 <strong>Первые слова (12-18 месяцев)</strong> — появляются первые осознанные слова, обычно обозначающие близких людей и любимые предметы.</p>
+      <p>🔹 <strong>Активное словообразование (18-24 месяцев)</strong> — словарный запас быстро растёт, появляются двусловные фразы, ребёнок начинает понимать простые инструкции.</p>
+      <p>🔹 <strong>Фразовая речь (2-3 года)</strong> — ребёнок строит простые предложения из 3-5 слов, задаёт вопросы "что это?", "почему?", активно интересуется названиями предметов.</p>
+      <p>🔹 <strong>Развитая речь (3-5 лет)</strong> — речь становится грамматически правильной, появляются сложные предложения, ребёнок может рассказать историю, описать событие.</p>
+
+      <h3>Нормы по возрасту</h3>
+      <table class="age-table">
+        <tr><th>Возраст</th><th>Речевые навыки</th></tr>
+        <tr><td>3 месяца</td><td>Издаёт гулящие звуки, реагирует на голос</td></tr>
+        <tr><td>6 месяцев</td><td>Лепетает, произносит слоги "га", "ба", "ма"</td></tr>
+        <tr><td>9 месяцев</td><td>Повторяет слоги, понимает слово "нельзя"</td></tr>
+        <tr><td>12 месяцев</td><td>1-3 осознанных слова, выполняет простые просьбы</td></tr>
+        <tr><td>18 месяцев</td><td>10-20 слов, показывает знакомые предметы</td></tr>
+        <tr><td>2 года</td><td>50+ слов, двусловные фразы, задаёт вопросы</td></tr>
+        <tr><td>3 года</td><td>Простые предложения, знает 200+ слов, рассказывает о себе</td></tr>
+        <tr><td>4 года</td><td>Сложные предложения, правильно произносит большинство звуков</td></tr>
+        <tr><td>5 лет</td><td>Грамматически правильная речь, знает 2000+ слов</td></tr>
+      </table>
+
+      <h3>Когда обращаться к логопеду?</h3>
+      <div class="warning-box">
+        <p>🚨 <strong>К 18 месяцам нет ни одного осознанного слова</strong></p>
+        <p>🚨 <strong>К 2 годам словарный запас менее 10 слов</strong></p>
+        <p>🚨 <strong>Ребёнок не понимает обращённую речь</strong></p>
+        <p>🚨 <strong>Пропускает звуки в словах постоянно после 3 лет</strong></p>
+        <p>🚨 <strong>Заикание или нарушение темпа речи</strong></p>
+        <p>🚨 <strong>Регресс речи — ребёнок перестал говорить слова, которые раньше знал</strong></p>
+      </div>
+      <p>Раннее обращение к логопеду значительно повышает эффективность коррекции. Не откладывайте визит к специалисту, если заметили хотя бы один из перечисленных признаков. Чем раньше начата работа, тем быстрее и легче ребёнок нагонит сверстников.</p>
+
+      <h3>Как помочь ребенку?</h3>
+      <p>💬 <strong>Много разговаривайте</strong> — описывайте всё, что делаете, комментируйте действия ребёнка</p>
+      <p>💬 <strong>Читайте книги</strong> — ежедневное чтение развивает словарный запас и фантазию</p>
+      <p>💬 <strong>Пойте песенки</strong> — ритм и мелодика помогают запоминать слова</p>
+      <p>💬 <strong>Не переключайте телевизор</strong> — живое общение важнее любых мультфильмов</p>
+      <p>💬 <strong>Слушайте и ждите</strong> — дайте ребёнку время подобрать слова, не перебивайте</p>
+      <p>💬 <strong>Играйте в звукоподражание</strong> — учите звуки животных, транспорта, предметов</p>
+      <p>💬 <strong>Не исправляйте агрессивно</strong> — если ребёнок сказал неправильно, повторите правильно, не критикуя</p>
+
+      <h3>Упражнения для дома</h3>
+      <div class="highlight-box">
+        <p>🎯 <strong>"Покажи, где..."</strong> — просите ребёнка показать знакомые предметы, постепенно усложняя</p>
+        <p>🎯 <strong>"Кто как говорит?"</strong> — учите звуки животных, это весело и полезно</p>
+        <p>🎯 <strong>"Скажи наоборот"</strong> — игра с антонимами (большой-маленький, горячий-холодный)</p>
+        <p>🎯 <strong>"Что изменилось?"</strong> — спрячьте предмет, попросите назвать, чего не хватает</p>
+        <p>🎯 <strong>"Придумай сказку"</strong> — начните историю, предложите ребёнку продолжить</p>
+      </div>
+
+      <p>Каждый ребёнок развивается в своём темпе, и небольшие отклонения от средних показателей — это нормально. Главное — обеспечить малышу богатую речевую среду, много общаться и вовремя обращаться к специалистам при необходимости. В центре MOM наши логопеды проводят диагностику и коррекционные занятия, помогая каждому ребёнку раскрыть свой речевой потенциал.</p>
+    </div>
+  </div>
+
+  <div class="btn-wrap">
+    <a class="btn btn-primary" href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank">📅 Записаться к логопеду</a>
+  </div>
+
+
+  </div>
+
+</div>
+<div class="page" id="page-article-stopy">
+<div class="container">
+
+  <div class="page-header">
+    <h1>👣 Плоскостопие: профилактика и лечение</h1>
+    <p>Здоровье детских ножек — основа правильной осанки и физического развития</p>
+  </div>
+
+  <div class="btn-wrap" style="text-align:left;">
+    <a class="btn btn-back" onclick="showPage('articles')">← Назад к статьям</a>
+  </div>
+
+  <div class="card">
+    <div class="article-content">
+      <p>Детские ножки — это фундамент всего организма. От их здоровья зависит правильность осанки, работа позвоночника, а в дальнейшем — и состояние всего опорно-двигательного аппарата. Плоскостопие — одно из самых распространённых заболеваний у детей, которое, к счастью, при раннем выявлении и правильном подходе хорошо поддаётся коррекции.</p>
+      <p>В этой статье мы расскажем о том, что такое плоскостопие, почему оно возникает, как его предотвратить и какие методы лечения существуют.</p>
+
+      <h3>Что такое плоскостопие?</h3>
+      <p>Плоскостопие — это деформация стопы, при которой происходит уплощение её продольного или поперечного свода. У новорождённых стопы естественным образом плоские, потому что подкожная жировая прослойка скрывает свод. Настоящий свод начинает формироваться к 3-6 годам, когда ребёнок активно ходит и бегает.</p>
+      <p>Существует физиологическое плоскостопие (норма для возраста до 5-6 лет) и патологическое, которое требует лечения. Различить их может только ортопед на основании осмотра и, при необходимости, дополнительных исследований.</p>
+      <p>У здоровой стопы есть два свода — продольный (вдоль внутреннего края) и поперечный (у основания пальцев). Эти своды выполняют роль природного амортизатора, смягчая удары при ходьбе и беге и распределяя нагрузку.</p>
+
+      <h3>Причины развития</h3>
+      <p>🔍 <strong>Наследственность</strong> — если у родителей было плоскостопие, риск у ребёнка значительно выше</p>
+      <p>🔍 <strong>Гиподинамия</strong> — недостаточная физическая активность, долгое сидение</p>
+      <p>🔍 <strong>Неправильная обувь</strong> — тесная, без супинатора, с мягкой колодкой, большой каблук</p>
+      <p>🔍 <strong>Избыточный вес</strong> — лишняя нагрузка на формирующиеся своды стопы</p>
+      <p>🔍 <strong>Рахит</strong> — нарушение обмена веществ, влияющее на развитие костей</p>
+      <p>🔍 <strong>Неврологические заболевания</strong> — церебральный паралич, ДЦП</p>
+      <p>🔍 <strong>Травмы стоп и голеностопа</strong></p>
+
+      <div class="warning-box">
+        <strong>⚠️ Важно:</strong> Плоскостопие не является безобидным заболеванием. Без лечения оно может привести к деформации стоп, болям в ногах, нарушению осанки, сколиозу, остеохондрозу и артрозу суставов во взрослом возрасте.
+      </div>
+
+      <h3>Профилактика</h3>
+      <p>Профилактика плоскостопия начинается с первых шагов ребёнка и включает несколько важных аспектов:</p>
+      <p>✅ <strong>Босиком</strong> — хождение босиком по неровным поверхностям (песок, трава, мелкие камешки, специальные массажные коврики) — лучшая гимнастика для стоп</p>
+      <p>✅ <strong>Правильная обувь</strong> — жёсткий задник, небольшой каблучок (0.5-1 см), супинатор, свободный носок, застёжки для фиксации</p>
+      <p>✅ <strong>Физическая активность</strong> — бег, прыжки, ходьба по бревну, лазание</p>
+      <p>✅ <strong>Контроль веса</strong> — избыточная масса тела создаёт дополнительную нагрузку</p>
+      <p>✅ <strong>Гимнастика для стоп</strong> — регулярные упражнения укрепляют мышцы свода</p>
+      <p>✅ <strong>Осмотр ортопеда</strong> — профилактические осмотры 1-2 раза в год</p>
+
+      <h3>Гимнастика для стоп</h3>
+      <ul class="gym-list">
+        <li>🦶 <strong>Ходьба на цыпочках</strong> — 10-15 шагов, 3-4 раза</li>
+        <li>🦶 <strong>Ходьба на внешней стороне стопы</strong> — 10-15 шагов</li>
+        <li>🦶 <strong>Ходьба на пятках</strong> — 10-15 шагов</li>
+        <li>🦶 <strong>Сгибание-разгибание пальцев</strong> — по 10 раз на каждой ноге</li>
+        <li>🦶 <strong>"Кошечка"</strong> — встать на четвереньки, округлить и вогнуть спину</li>
+        <li>🦶 <strong>Поднимание предметов пальцами ног</strong> — полотенце, мелкие мячи</li>
+        <li>🦶 <strong>Катание палочки или бутылочки стопой</strong> — вперёд-назад</li>
+        <li>🦶 <strong>Прыжки на скакалке</strong> — 1-2 минуты</li>
+        <li>🦶 <strong>Ходьба по "дорожке здоровья"</strong> — массажный коврик с разными поверхностями</li>
+        <li>🦶 <strong>"Медвежья походка"</strong> — ходьба на четвереньких вперёд и назад</li>
+      </ul>
+
+      <div class="highlight-box">
+        <strong>💡 Совет:</strong> Выполняйте гимнастику ежедневно, лучше утром. Превратите её в веселую игру — делайте упражнения под музыку или соревнуйтесь с ребёнком. Регулярность — ключ к успеху!
+      </div>
+
+      <h3>Когда нужен ортопед?</h3>
+      <p>🩺 Ребёнок жалуется на боли в ногах, устаёт при ходьбе</p>
+      <p>🩺 Видны явные деформации стоп — "косточки", шишки</p>
+      <p>🩺 Неправильная постановка стоп при ходьбе — сильная вальгусная деформация</p>
+      <p>🩺 Хромота, неуверенная походка</p>
+      <p>🩺 После 6 лет свод стопы так и не сформировался</p>
+      <p>🩺 Родители замечают, что обувь стирается неравномерно</p>
+
+      <p>Плоскостопие — это не приговор. При раннем выявлении и правильном лечении большинство детей успешно корректируют форму стоп и избегают осложнений в будущем. В центре MOM наши ортопеды проведут полное обследование, подберут индивидуальный комплекс упражнений и, при необходимости, назначат ношение ортопедической обуви или стелек.</p>
+    </div>
+  </div>
+
+  <div class="btn-wrap">
+    <a class="btn btn-primary" href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank">📅 Записаться к ортопеду</a>
+  </div>
+
+
+  </div>
+
+</div>
+<div class="page" id="page-article-son">
+<div class="container">
+
+  <div class="page-header">
+    <h1>🌙 Детский сон: здоровые привычки</h1>
+    <p>Как наладить здоровый сон вашего малыша и всей семьи</p>
+  </div>
+
+  <div class="btn-wrap" style="text-align:left;">
+    <a class="btn btn-back" onclick="showPage('articles')">← Назад к статьям</a>
+  </div>
+
+  <div class="card">
+    <div class="article-content">
+      <p>Сон — это не просто отдых, а активный процесс, во время которого происходят важнейшие процессы роста и развития ребёнка. Во время сна вырабатывается гормон роста, формируются нейронные связи, укрепляется иммунитет, восстанавливается энергия. Качество и продолжительность сна напрямую влияют на физическое здоровье, эмоциональное состояние и когнитивные способности малыша.</p>
+      <p>Однако многие родители сталкиваются с проблемами сна: малыш плохо засыпает, часто просыпается, плачет ночью. В этой статье мы разберём нормы сна, как наладить режим, решить частые проблемы и обеспечить безопасный сон.</p>
+
+      <h3>Сколько должен спать ребенок?</h3>
+      <p>Потребность во сне у каждого ребёнка индивидуальна, но существуют средние рекомендации Национального фонда сна США:</p>
+
+      <table class="sleep-table">
+        <tr><th>Возраст</th><th>Ночной сон</th><th>Дневной сон</th><th>Общая потребность</th></tr>
+        <tr><td>0-3 месяца</td><td>8-9 часов</td><td>7-9 часов</td><td>14-17 часов</td></tr>
+        <tr><td>4-11 месяцев</td><td>9-10 часов</td><td>4-5 часов</td><td>12-15 часов</td></tr>
+        <tr><td>1-2 года</td><td>11 часов</td><td>2-3 часа</td><td>11-14 часов</td></tr>
+        <tr><td>3-5 лет</td><td>10-11 часов</td><td>1-2 часа</td><td>10-13 часов</td></tr>
+        <tr><td>6-13 лет</td><td>9-11 часов</td><td>нет</td><td>9-11 часов</td></tr>
+      </table>
+
+      <p>Помните, что эти цифры — лишь ориентир. Некоторые дети спят больше, другие — меньше. Главное, чтобы малыш был бодрым и активным в периоды бодрствования, хорошо ел и набирал вес.</p>
+
+      <h3>Здоровый режим сна</h3>
+      <p>Регулярный режим — залог здорового сна. Вот ключевые принципы:</p>
+      <p>🌟 <strong>Фиксированное время отхода ко сну</strong> — отклонение не более чем на 30 минут помогает установить биологические часы</p>
+      <p>🌟 <strong>Ритуал засыпания</strong> — последовательность одинаковых действий (купание, массаж, сказка, колыбельная) сигнализирует ребёнку, что пора спать</p>
+      <p>🌟 <strong>Комфортные условия</strong> — температура 18-22°C, приглушённый свет, тишина или белый шум</p>
+      <p>🌟 <strong>Активное бодрствование</strong> — физические игры и прогулки на свежем воздухе способствуют лучшему сну</p>
+      <p>🌟 <strong>Ограничение экранов</strong> — за 1-2 часа до сна не используйте телевизор, планшет, телефон</p>
+      <p>🌟 <strong>Лёгкий ужин</strong> — не перекармливайте перед сном, но и не укладывайте голодным</p>
+
+      <h3>Частые проблемы со сном</h3>
+      <div class="highlight-box">
+        <p>😴 <strong>Ребёнок плохо засыпает</strong> — проверьте режим дня, возможно, малыш перерос сон или, наоборот, переутомился. Убедитесь, что ритуал засыпания соблюдается.</p>
+        <p>😴 <strong>Частые ночные пробуждения</strong> — причины могут быть разными: голод, жажда, неудобная одежда, слишком жарко или холодно, режущиеся зубы.</p>
+        <p>😴 <strong>Ранние пробуждения</strong> — попробуйте сдвинуть время отхода ко сну позже, используйте шторы-блэкаут.</p>
+        <p>😴 <strong>Страхи перед сном</strong> — характерны для детей старше 2 лет. Не оставляйте ребёнка один на один со страхом, обсудите его, используйте ночник.</p>
+        <p>😴 <strong>Сон "задом наперёд"</strong> — малыш спит днём, а бодрствует ночью. Постепенно сдвигайте график, увеличивая время бодрствования днём.</p>
+      </div>
+
+      <h3>Как улучшить сон?</h3>
+      <p>💡 <strong>Дневной сон</strong> — не отменяйте дневной сон раньше времени. Переутомленный ребёнок засыпает хуже и просыпается чаще</p>
+      <p>💡 <strong>Воздух в комнате</strong> — регулярно проветривайте, оптимальная влажность 40-60%</p>
+      <p>💡 <strong>Одежда для сна</strong> — выбирайте натуральные ткани, избегайте перегрева</p>
+      <p>💡 <strong>Спокойствие родителей</strong> — дети чувствуют ваше состояние. Стресс передаётся малышу</p>
+      <p>💡 <strong>Не создавайте ассоциаций</strong> — укладывайте бодрствующего, чтобы он учился засыпать самостоятельно</p>
+      <p>💡 <strong>Белый шум</strong> — звук пылесоса, фена или специальное приложение помогают многим малышам</p>
+
+      <h3>Безопасный сон</h3>
+      <div class="warning-box">
+        <p>🛡️ <strong>Сон на спине</strong> — положение на спине снижает риск СВДС</p>
+        <p>🛡️ <strong>Жёсткий матрас</strong> — без подушек, мягких игрушек, бамперов в кроватке</p>
+        <p>🛡️ <strong>Не перегревайте</strong> — лучше прохладно, чем жарко</p>
+        <p>🛡️ <strong>Совместный сон</strong> — если спите вместе, обеспечьте безопасность: малыш не должен упасть, задушиться одеялом</p>
+        <p>🛡️ <strong>Без курения</strong> — пассивное курение увеличивает риск СВДС</p>
+        <p>🛡️ <strong>Соблюдайте рекомендации Американской академии педиатрии</strong> по безопасному сну</p>
+      </div>
+
+      <p>Хороший сон — это основа здоровья и развития вашего ребёнка. Не ждите, что проблемы решатся сами — формируйте правильные привычки с первых месяцев жизни. Если у вас возникли трудности, наши специалисты центра MOM помогут разработать индивидуальный план сна для вашего малыша.</p>
+    </div>
+  </div>
+
+  <div class="btn-wrap">
+    <a class="btn btn-primary" href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank">📅 Записаться на консультацию</a>
+  </div>
+
+
+  </div>
+
+</div>
+<div class="page" id="page-article-dvigatelka">
+<div class="container">
+
+  <div class="page-header">
+    <h1>🤸 Двигательное развитие ребенка</h1>
+    <p>От первых движений до уверенной ходьбы — путь вашего малыша</p>
+  </div>
+
+  <div class="btn-wrap" style="text-align:left;">
+    <a class="btn btn-back" onclick="showPage('articles')">← Назад к статьям</a>
+  </div>
+
+  <div class="card">
+    <div class="article-content">
+      <p>Двигательное развитие — это один из важнейших аспектов роста ребёнка. От того, насколько своевременно и гармонично развиваются двигательные навыки, зависит физическое здоровье, координация, уверенность в себе и даже успеваемость в школе. Каждый родитель с волнением ждёт первого переворота, первого ползания, первых шагов.</p>
+      <p>В этой статье мы подробно рассмотрим этапы двигательного развития, дадим рекомендации по стимуляции развития и расскажем, когда стоит обратиться к специалисту.</p>
+
+      <h3>Этапы двигательного развития</h3>
+      <p>Двигательное развитие следует определённой последовательности: от головы к ногам, от туловища к конечностям, от крупных движений к мелким. Каждый новый навык является фундаментом для следующего.</p>
+
+      <table class="milestone-table">
+        <tr><th>Возраст</th><th>Двигательный навык</th></tr>
+        <tr><td>1-2 месяца</td><td>Держит голову в вертикальном положении</td></tr>
+        <tr><td>3 месяца</td><td>Уверенно держит голову, поворачивается на бок</td></tr>
+        <tr><td>4 месяца</td><td>Переворачивается со спины на живот</td></tr>
+        <tr><td>5-6 месяцев</td><td>Переворачивается в обе стороны, сидит с поддержкой</td></tr>
+        <tr><td>6-7 месяцев</td><td>Самостоятельно садится, ползёт на животе</td></tr>
+        <tr><td>8-9 месяцев</td><td>Ползает на четвереньках, встаёт у опоры</td></tr>
+        <tr><td>10-11 месяцев</td><td>Ходит вдоль опоры, встаёт без помощи</td></tr>
+        <tr><td>12-13 месяцев</td><td>Первые самостоятельные шаги</td></tr>
+        <tr><td>15-18 месяцев</td><td>Уверенно ходит, приседает, поднимает предметы</td></tr>
+        <tr><td>2 года</td><td>Бегает, прыгает на двух ногах, лазает</td></tr>
+        <tr><td>3 года</td><td>Прыгает с одной ноги, катает велосипед, лазает по лестнице</td></tr>
+      </table>
+
+      <h3>Когда начинать заниматься?</h3>
+      <p>Физическое развитие начинается с первых дней жизни. Уже в роддоме малышу полезно лежать на животе — это укрепляет мышцы шеи и спины, готовит к переворотам. Систематические занятия гимнастикой рекомендуется начинать <strong>с 1 месяца</strong> — лёгкие упражнения, массаж, положение на животе.</p>
+      <p>Главное правило — всё должно проходить в игровой форме и с удовольствием для ребёнка. Не заставляйте малыша заниматься, если он капризничает, устал или голоден. Лучшее время для гимнастики — после сна и кормления, когда ребёнок бодр и в хорошем настроении.</p>
+
+      <div class="highlight-box">
+        <strong>💡 Помните:</strong> Каждый ребёнок развивается в своём темпе. Небольшие отклонения от средних сроков — это нормально. Однако систематическое отставание более чем на 2-3 месяца по нескольким навыкам — повод для консультации с неврологом.
+      </div>
+
+      <h3>Упражнения для малышей</h3>
+      <div class="exercise-card">
+        <strong>🤸 0-3 месяца:</strong>
+        <p>• Положение на животе — начинайте с 1-2 минут, постепенно увеличивая до 10-15 минут</p>
+        <p>• Лёгкие разгибания ручек и ножек</p>
+        <p>• "Велосипед" — круговые движения ножками</p>
+        <p>• Поглаживание спинки, массаж стоп</p>
+      </div>
+      <div class="exercise-card">
+        <strong>🤸 3-6 месяцев:</strong>
+        <p>• Помощь в переворачивании — слегка приподнимайте ножку, стимулируя поворот</p>
+        <p>• "Попрыгунчик" — придерживая под мышки, помогайте "попрыгать" на ваших коленях</p>
+        <p>• Захват игрушек — побуждайте малыша тянуться к предметам</p>
+        <p>• Плавание — занятия в воде отлично развивают все группы мышц</p>
+      </div>
+      <div class="exercise-card">
+        <strong>🤸 6-9 месяцев:</strong>
+        <p>• "Мостик" — ребёнок лежит на спине, вы приподнимаете его за ручки</p>
+        <p>• "Пароходик" — ползание за игрушкой, препятствия для преодоления</p>
+        <p>• Хождение по наклонной плоскости — подушка, по которой малыш карабкается</p>
+        <p>• Игры с мячом — катание, ловля</p>
+      </div>
+      <div class="exercise-card">
+        <strong>🤸 9-12 месяцев:</strong>
+        <p>• Ходьба за ручки с постепенным уменьшением поддержки</p>
+        <p>• Ходьба вдоль мебели — побуждайте отпускать одну руку, затем обе</p>
+        <p>• Приседания — покажите, как садиться и вставать</p>
+        <p>• Танцы под музыку — хватайте малыша за ручки и танцуйте вместе</p>
+      </div>
+
+      <h3>Стимуляция развития</h3>
+      <p>🏠 <strong>Создайте безопасное пространство</strong> — уберите опасные предметы, обеспечьте мягкое покрытие, чтобы малыш мог свободно двигаться</p>
+      <p>🏠 <strong>Меньше времени в кресле и манеже</strong> — ребёнку нужно пространство для активных движений</p>
+      <p>🏠 <strong>Игрушки на расстоянии вытянутой руки</strong> — стимулируют ползание и ходьбу</p>
+      <p>🏠 <strong>Прогулки на свежем воздухе</strong> — физическая активность на улице укрепляет здоровье</p>
+      <p>🏠 <strong>Бассейн</strong> — плавание — лучшее упражнение для всего тела</p>
+      <p>🏠 <strong>Ходьба босиком</strong> — разные поверхности развивают чувствительность стоп</p>
+      <p>🏠 <strong>Весёлые игры</strong> — догонялки, прятки, игра в мяч</p>
+      <p>🏠 <strong>Детская площадка</strong> — горки, качели, лазалки развивают координацию</p>
+
+      <h3>Когда бить тревогу?</h3>
+      <div class="warning-box">
+        <p>🚨 <strong>К 3 месяцам</strong> — ребёнок не держит голову</p>
+        <p>🚨 <strong>К 6 месяцам</strong> — не переворачивается, не сидит с поддержкой</p>
+        <p>🚨 <strong>К 9 месяцам</strong> — не ползает, не садится самостоятельно</p>
+        <p>🚨 <strong>К 12 месяцам</strong> — не встаёт на ноги, не ходит с поддержкой</p>
+        <p>🚨 <strong>К 18 месяцам</strong> — не ходит самостоятельно</p>
+        <p>🚨 <strong>Асимметрия движений</strong> — малыш активно двигает одной ручкой/ножкой, а другой — нет</p>
+        <p>🚨 <strong>Чрезмерная напряжённость или вялость</strong> — мышечный тонус значительно выше или ниже нормы</p>
+        <p>🚨 <strong>Регресс</strong> — ребёнок перестал выполнять навыки, которые раньше умел</p>
+      </div>
+
+      <p>Двигательное развитие — это удивительный процесс, который протекает у каждого ребёнка по-своему. Ваша задача как родителя — создать безопасные условия, обеспечить достаточную физическую активность и вовремя заметить возможные отклонения. Если у вас есть вопросы или сомнения, наши специалисты центра MOM всегда готовы помочь.</p>
+    </div>
+  </div>
+
+  <div class="btn-wrap">
+    <a class="btn btn-primary" href="https://booking.medflex.ru/?user=9d07f51dcdac17646e01a3bdfc52a159" target="_blank">📅 Записаться на консультацию</a>
+  </div>
+
+
+  </div>
+
+</div>
+<div class="page" id="page-anketa-nevrolog">
+<div class="container" style="position:relative;overflow:hidden;">
+  <div class="floating-circle" style="width: 180px; height: 180px; background: linear-gradient(135deg, #6B8EC6, #A8D5A2); top: 10%; right: -50px; animation-delay: 0s;"></div>
+  <div class="floating-circle" style="width: 120px; height: 120px; background: linear-gradient(135deg, #f06292, #ffb6c1); bottom: 20%; left: -30px; animation-delay: 1.5s;"></div>
+  <div class="page-header">
+    <h1>🧠 Анкета для приёма у невролога</h1>
+    <p>Пожалуйста, заполните все поля. Это поможет врачу лучше подготовиться к приёму.</p>
+  </div>
+
+  <div style="text-align:left; margin-bottom:20px;">
+    <a class="btn btn-back" onclick="showPage('home')">← Назад на главную</a>
+  </div>
+
+  <div class="anketa-form"><form id="nevrologForm" onsubmit="handleSubmit(event)">
+
+    <!-- Section 1: Basic Info -->
+    <div class="form-card">
+      <h2>👶 Основная информация о ребёнке</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nevrChildName" class="required">ФИО ребенка</label>
+          <input type="text" id="nevrChildName" name="childName" placeholder="Иванов Иван Иванович" required>
+        </div>
+        <div class="form-group">
+          <label for="nevrChildAge" class="required">Возраст (полных лет/месяцев)</label>
+          <input type="number" id="nevrChildAge" name="childAge" placeholder="Например: 2" min="0" max="18" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="nevrBirthDate" class="required">Дата рождения</label>
+        <input type="date" id="nevrBirthDate" name="birthDate" required>
+      </div>
+    </div>
+
+    <!-- Section 2: Complaints -->
+    <div class="form-card">
+      <h2>📝 Жалобы и обращение</h2>
+      <div class="form-group">
+        <label for="complaints" class="required">Жалобы (что беспокоит ребёнка)</label>
+        <textarea id="complaints" name="complaints" placeholder="Опишите, что вас беспокоит: головные боли, головокружения, судороги, нарушения сна, проблемы с поведением и т.д." required></textarea>
+      </div>
+    </div>
+
+    <!-- Section 3: Pregnancy -->
+    <div class="form-card">
+      <h2>🤰 Анамнез жизни</h2>
+      <div class="form-group">
+        <label class="required">Беременность протекала:</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="pregnancyNormal" name="pregnancy" value="normal" required>
+            <label for="pregnancyNormal">Нормально</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="pregnancyComplicated" name="pregnancy" value="complicated">
+            <label for="pregnancyComplicated">С осложнениями</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Были ли осложнения при родах?</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="birthNo" name="birthComplications" value="no">
+            <label for="birthNo">Нет</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="birthYes" name="birthComplications" value="yes">
+            <label for="birthYes">Да</label>
+          </div>
+        </div>
+        <div class="conditional-field" id="birthDetailsField" style="display:none;">
+          <label for="birthDetails">Опишите осложнения:</label>
+          <textarea id="birthDetails" name="birthDetails" placeholder="Кесарево сечение, обвитие пуповиной, гипоксия и т.д."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Development Milestones -->
+    <div class="form-card">
+      <h2>📈 Этапы развития (укажите возраст в месяцах)</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="holdHead">Когда ребёнок начал держать голову?</label>
+          <input type="text" id="holdHead" name="holdHead" placeholder="Например: 2 месяца">
+        </div>
+        <div class="form-group">
+          <label for="sitAge">Когда ребёнок начал сидеть?</label>
+          <input type="text" id="sitAge" name="sitAge" placeholder="Например: 6 месяцев">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="crawlAge">Когда ребёнок начал ползать?</label>
+          <input type="text" id="crawlAge" name="crawlAge" placeholder="Например: 8 месяцев">
+        </div>
+        <div class="form-group">
+          <label for="walkAge">Когда ребёнок начал ходить?</label>
+          <input type="text" id="walkAge" name="walkAge" placeholder="Например: 12 месяцев">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="firstWords">Первые слова в возрасте?</label>
+        <input type="text" id="firstWords" name="firstWords" placeholder="Например: 11 месяцев — 'мама', 'дай'">
+      </div>
+    </div>
+
+    <!-- Section 5: Medical History -->
+    <div class="form-card">
+      <h2>🏥 Медицинская история</h2>
+      <div class="form-group">
+        <label>Были ли судороги?</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="seizuresNo" name="seizures" value="no">
+            <label for="seizuresNo">Нет</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="seizuresYes" name="seizures" value="yes">
+            <label for="seizuresYes">Да</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Были ли травмы головы?</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="traumaNo" name="headTrauma" value="no">
+            <label for="traumaNo">Нет</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="traumaYes" name="headTrauma" value="yes">
+            <label for="traumaYes">Да</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Принимает ли ребёнок лекарства?</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="medsNo" name="medications" value="no">
+            <label for="medsNo">Нет</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="medsYes" name="medications" value="yes">
+            <label for="medsYes">Да</label>
+          </div>
+        </div>
+        <div class="conditional-field" id="medsDetailsField" style="display:none;">
+          <label for="medsDetails">Какие лекарства принимает?</label>
+          <textarea id="medsDetails" name="medsDetails" placeholder="Укажите названия препаратов и дозировку"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6: Heredity & Extra -->
+    <div class="form-card">
+      <h2>🧬 Наследственность и дополнительная информация</h2>
+      <div class="form-group">
+        <label for="heredity">Наследственность (заболевания родственников)</label>
+        <textarea id="heredity" name="heredity" placeholder="Есть ли в семье заболевания нервной системы, эпилепсия, психические расстройства, заикание и т.д."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="extraInfo">Дополнительная информация</label>
+        <textarea id="extraInfo" name="extraInfo" placeholder="Любая информация, которую вы считаете важной сообщить врачу: особенности поведения, привычки, перенесённые болезни, аллергии и т.д."></textarea>
+      </div>
+    </div>
+
+    <div class="btn-wrap">
+      <button type="submit" class="btn btn-primary">📨 Отправить анкету</button>
+    </div>
+
+  </form></div></div>
+</div>
+
+<div class="page" id="page-anketa-pediatr">
+<div class="container" style="position:relative;overflow:hidden;">
+  <div class="floating-circle" style="width: 180px; height: 180px; background: linear-gradient(135deg, #6B8EC6, #A8D5A2); top: 10%; right: -50px; animation-delay: 0s;"></div>
+  <div class="floating-circle" style="width: 120px; height: 120px; background: linear-gradient(135deg, #f06292, #ffb6c1); bottom: 20%; left: -30px; animation-delay: 1.5s;"></div>
+  <div class="page-header">
+    <h1>👩‍⚕️ Анкета для приёма у педиатра</h1>
+    <p>Пожалуйста, заполните все поля. Это поможет врачу лучше подготовиться к приёму.</p>
+  </div>
+
+  <div style="text-align:left; margin-bottom:20px;">
+    <a class="btn btn-back" onclick="showPage('home')">← Назад на главную</a>
+  </div>
+
+  <div class="anketa-form"><form id="pediatrForm" onsubmit="handleSubmit(event)">
+
+    <!-- Section 1: Basic Info -->
+    <div class="form-card">
+      <h2>👶 Основная информация о ребёнке</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="childName" class="required">ФИО ребенка</label>
+          <input type="text" id="childName" name="childName" placeholder="Иванов Иван Иванович" required>
+        </div>
+        <div class="form-group">
+          <label for="pedChildAge" class="required">Возраст (полных лет/месяцев)</label>
+          <input type="number" id="pedChildAge" name="childAge" placeholder="Например: 3" min="0" max="18" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="birthDate" class="required">Дата рождения</label>
+        <input type="date" id="birthDate" name="birthDate" required>
+      </div>
+    </div>
+
+    <!-- Section 2: Physical Data -->
+    <div class="form-card">
+      <h2>📊 Физические данные</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="birthWeight">Вес при рождении (кг)</label>
+          <input type="text" id="birthWeight" name="birthWeight" placeholder="Например: 3.250">
+        </div>
+        <div class="form-group">
+          <label for="currentWeight">Текущий вес (кг)</label>
+          <input type="text" id="currentWeight" name="currentWeight" placeholder="Например: 12.5">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="height">Рост (см)</label>
+        <input type="text" id="height" name="height" placeholder="Например: 92">
+      </div>
+    </div>
+
+    <!-- Section 3: Feeding -->
+    <div class="form-card">
+      <h2>🍼 Вскармливание и питание</h2>
+      <div class="form-group">
+        <label class="required">Тип вскармливания:</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="feedingBreast" name="feedingType" value="breast" required>
+            <label for="feedingBreast">Грудное</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="feedingFormula" name="feedingType" value="formula">
+            <label for="feedingFormula">Искусственное</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="feedingMixed" name="feedingType" value="mixed">
+            <label for="feedingMixed">Смешанное</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Allergies -->
+    <div class="form-card">
+      <h2>🌸 Аллергические реакции</h2>
+      <div class="form-group">
+        <label for="allergies">Есть ли аллергические реакции?</label>
+        <textarea id="allergies" name="allergies" placeholder="Укажите на что проявляется аллергия (продукты, пыльца, шерсть и т.д.) и как проявляется (сыпь, отёк, насморк и т.д.)"></textarea>
+        <small>Если аллергий нет, оставьте поле пустым</small>
+      </div>
+    </div>
+
+    <!-- Section 5: Medical History -->
+    <div class="form-card">
+      <h2>📋 Медицинская история</h2>
+      <div class="form-group">
+        <label for="diseases">Перенесенные заболевания</label>
+        <textarea id="diseases" name="diseases" placeholder="Перечислите перенесённые заболевания с указанием возраста: ОРВИ, ветрянка, ангина и т.д."></textarea>
+      </div>
+      <div class="form-group">
+        <label class="required">Прививки по календарю:</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input type="radio" id="vaccinesYes" name="vaccines" value="yes" required>
+            <label for="vaccinesYes">Да, все</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="vaccinesNo" name="vaccines" value="no">
+            <label for="vaccinesNo">Нет</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="vaccinesPartial" name="vaccines" value="partial">
+            <label for="vaccinesPartial">Частично</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6: Current Complaints -->
+    <div class="form-card">
+      <h2>🩺 Текущие жалобы</h2>
+      <div class="form-group">
+        <label for="currentComplaints" class="required">Жалобы на данный момент</label>
+        <textarea id="currentComplaints" name="currentComplaints" placeholder="Опишите, что беспокоит ребёнка в настоящее время: температура, кашель, насморк, боль в животе, изменения в поведении, проблемы со сном, аппетитом и т.д." required></textarea>
+      </div>
+    </div>
+
+    <!-- Section 7: Contact Info -->
+    <div class="form-card">
+      <h2>📞 Контактная информация</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone" class="required">Контактный телефон</label>
+          <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="example@mail.ru">
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-wrap">
+      <button type="submit" class="btn btn-primary">📨 Отправить анкету</button>
+    </div>
+
+  </form></div></div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
