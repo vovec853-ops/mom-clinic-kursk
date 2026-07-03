@@ -259,9 +259,48 @@
       }
     }
 
+    // ===== ФУНКЦИИ МОДАЛЬНОГО ОКНА СОЦСЕТЕЙ =====
+    function openSocialModal() {
+      let modal = document.getElementById('socialModal');
+      if (!modal) {
+        document.body.insertAdjacentHTML('beforeend', `
+          <div id="socialModal" class="doctor-modal" onclick="if(event.target===this)closeSocialModal()">
+            <div class="doctor-modal-content" style="max-width: 400px; text-align: center;">
+              <span class="doctor-modal-close" onclick="closeSocialModal()">&times;</span>
+              <h2 style="color: var(--primary); margin-bottom: 30px; font-size: 28px;">Мы тут</h2>
+              <div style="display: flex; flex-direction: column; gap: 15px; padding: 20px 0;">
+                <a href="https://vk.com/club212652456" target="_blank" rel="noopener noreferrer" 
+                   style="display: block; padding: 16px 24px; background: linear-gradient(135deg, #4A86C1, #6B8EC6); color: white; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; transition: transform 0.2s;"
+                   onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                  <i class="fab fa-vk" style="margin-right: 10px;"></i>Мы в ВК
+                </a>
+                <a href="https://vk.com/public222835645" target="_blank" rel="noopener noreferrer"
+                   style="display: block; padding: 16px 24px; background: linear-gradient(135deg, #D8457A, #f06292); color: white; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 18px; transition: transform 0.2s;"
+                   onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                  <i class="fab fa-vk" style="margin-right: 10px;"></i>IPPOMOM
+                </a>
+              </div>
+            </div>
+          </div>
+        `);
+        modal = document.getElementById('socialModal');
+      }
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSocialModal() {
+      const modal = document.getElementById('socialModal');
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    }
+
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         closeDoctorModal();
+        closeSocialModal();
         closeNewsModal();
       }
     });
