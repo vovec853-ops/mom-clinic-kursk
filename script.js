@@ -1333,7 +1333,7 @@ function handleSubmit(e) {
   e.preventDefault();
   const formData = new FormData(e.target);
   const data = Object.fromEntries(formData.entries());
-  console.log('Form data:', data);
+  // console.log('Form data:', data);
   alert('Анкета отправлена! Мы свяжемся с вами для подтверждения записи.');
   // Here you would normally send data to server
 }
