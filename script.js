@@ -383,6 +383,34 @@
 // ============================================================================
 
 // ====== Ответы бота по категориям ======
+
+// Accessibility mode toggle
+function toggleAccessibility() {
+    document.body.classList.toggle('accessibility-mode');
+    const btn = document.getElementById('accessibilityBtn');
+    if (document.body.classList.contains('accessibility-mode')) {
+        btn.classList.add('active');
+        btn.title = 'Обычная версия';
+        localStorage.setItem('accessibilityMode', 'true');
+    } else {
+        btn.classList.remove('active');
+        btn.title = 'Версия для слабовидящих';
+        localStorage.setItem('accessibilityMode', 'false');
+    }
+}
+
+// Restore accessibility mode on load
+(function() {
+    if (localStorage.getItem('accessibilityMode') === 'true') {
+        document.body.classList.add('accessibility-mode');
+        var btn = document.getElementById('accessibilityBtn');
+        if (btn) {
+            btn.classList.add('active');
+            btn.title = 'Обычная версия';
+        }
+    }
+})();
+
 const BOT_RESPONSES = {
   // 1. Педиатр
   pediatr: {

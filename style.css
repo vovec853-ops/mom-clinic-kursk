@@ -107,8 +107,326 @@
         .page { display: none; animation: fadeIn 0.5s ease; }
         .page.active { display: block; }
         .page:not(#page-home) { padding-top: 80px; }
-        @media (max-width: 768px) { .page:not(#page-home) { padding-top: 70px; } }
-        @media (max-width: 480px) { .page:not(#page-home) { padding-top: 60px; } }
+        
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 768px) { .page:not(#page-home) { padding-top: 70px; } }
+        
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 480px) { .page:not(#page-home) { padding-top: 60px; } }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
         /* Hero Section */
@@ -486,7 +804,166 @@
         .fade-in.visible { opacity: 1; transform: translateY(0); }
 
         /* Responsive */
-        @media (max-width: 968px) {
+        
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 968px) {
             .hero { flex-direction: column; text-align: center; padding-top: 150px; }
             .hero-content { max-width: 100%; }
             .hero-image { position: relative; right: auto; top: auto; transform: none; width: 400px; height: 400px; margin: 40px auto 0; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); background: var(--white); }
@@ -550,7 +1027,166 @@
         .article-full ul { margin-left: 25px; margin-bottom: 15px; color: var(--text); }
         .nav-extra { display: flex; align-items: center; gap: 10px; margin-right: 15px; }
         .btn-small { padding: 8px 16px; font-size: 13px; }
-        @media (max-width: 1100px) { .nav-extra { display: none; } }
+        
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 1100px) { .nav-extra { display: none; } }
         .form-row { display: flex; gap: 20px; margin-bottom: 15px; flex-wrap: wrap; }
         .form-row .form-group { flex: 1; min-width: 200px; }
         .form-group { margin-bottom: 15px; }
@@ -608,6 +1244,165 @@
 }
 
 /* Mobile responsive */
+
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
 @media (max-width: 768px) {
   .container { padding: 0 15px !important; }
   .hero h1 { font-size: 2.5rem !important; }
@@ -624,6 +1419,165 @@
   .floating-circle { display: none !important; }
   .bot-container { width: 90vw !important; right: 5vw !important; }
 }
+
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
 @media (max-width: 480px) {
   .hero h1 { font-size: 1.8rem !important; }
   .section h2 { font-size: 1.8rem !important; }
@@ -650,7 +1604,166 @@
         .page-header p { font-size: 16px; opacity: 0.95; max-width: 600px; margin: 0 auto; position: relative; z-index: 1; line-height: 1.5; }
 
 
-        @media (max-width: 768px) {
+        
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 768px) {
             .services-grid { grid-template-columns: 1fr !important; }
             .news-grid { grid-template-columns: 1fr !important; }
             .articles-grid { grid-template-columns: 1fr !important; }
@@ -707,7 +1820,166 @@
             .page img { max-width: 100%; height: auto; }
             .page { overflow-x: hidden; }
         }
-        @media (max-width: 480px) {
+        
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 480px) {
             .section { padding: 40px 0 !important; }
             .section-title { font-size: 1.8rem !important; }
             .hero h1 { font-size: 2rem !important; }
@@ -772,8 +2044,326 @@
         .article-page th { background: var(--primary); color: white; font-weight: 600; }
         .article-page tr:nth-child(even) { background: #f8f9fa; }
         .page[id^="page-article-"] { padding-top: 80px; }
-        @media (max-width: 768px) { .page[id^="page-article-"] { padding-top: 70px; } }
-        @media (max-width: 480px) { .page[id^="page-article-"] { padding-top: 60px; } }
+        
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 768px) { .page[id^="page-article-"] { padding-top: 70px; } }
+        
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 480px) { .page[id^="page-article-"] { padding-top: 60px; } }
         .page[id^="page-article-"] .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
         .page[id^="page-article-"] .card { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 30px; }
         .page[id^="page-article-"] h3 { color: var(--primary); font-size: 24px; margin: 30px 0 15px; }
@@ -995,7 +2585,166 @@
       margin-bottom: 12px;
     }
 
-    @media (max-width: 768px) {
+    
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 768px) {
       .news-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1242,7 +2991,166 @@
     40% { transform: scale(1); }
   }
 
-  @media (max-width: 480px) {
+  
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
+@media (max-width: 480px) {
     .chat-window {
       width: calc(100vw - 20px);
       height: 70vh;
@@ -1386,6 +3294,165 @@
   align-items: center;
   cursor: pointer;
 }
+
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
 @media (max-width: 768px) {
   .doctor-modal-body {
     flex-direction: column;
@@ -1439,6 +3506,165 @@
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
 }
+
+/* Accessibility Button */
+.accessibility-btn {
+    background: linear-gradient(135deg, #4A6FA5, #6B8EC6);
+    color: #fff;
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(107, 142, 198, 0.4);
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+.accessibility-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(107, 142, 198, 0.6);
+}
+.accessibility-btn.active {
+    background: linear-gradient(135deg, #D8457A, #F06292);
+}
+
+/* Accessibility Mode Styles */
+body.accessibility-mode {
+    font-size: 18px !important;
+}
+body.accessibility-mode * {
+    font-size: inherit !important;
+}
+body.accessibility-mode h1,
+body.accessibility-mode h2,
+body.accessibility-mode h3 {
+    font-size: 200% !important;
+}
+body.accessibility-mode p,
+body.accessibility-mode span,
+body.accessibility-mode a,
+body.accessibility-mode li,
+body.accessibility-mode div {
+    font-size: 150% !important;
+}
+body.accessibility-mode .btn,
+body.accessibility-mode button,
+body.accessibility-mode .staff-btn {
+    font-size: 140% !important;
+    padding: 16px 32px !important;
+    min-height: 52px !important;
+}
+body.accessibility-mode .btn-small {
+    font-size: 120% !important;
+    padding: 12px 20px !important;
+}
+body.accessibility-mode .nav-links a {
+    font-size: 140% !important;
+}
+body.accessibility-mode input,
+body.accessibility-mode textarea,
+body.accessibility-mode select {
+    font-size: 140% !important;
+    padding: 14px !important;
+}
+body.accessibility-mode .chat-input {
+    font-size: 140% !important;
+}
+body.accessibility-mode .chat-send {
+    font-size: 140% !important;
+    padding: 14px 20px !important;
+}
+body.accessibility-mode .hero-subtitle,
+body.accessibility-mode .hero-hours {
+    font-size: 160% !important;
+}
+body.accessibility-mode .section-subtitle {
+    font-size: 140% !important;
+}
+body.accessibility-mode .feature-text {
+    font-size: 140% !important;
+}
+body.accessibility-mode .price {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-name {
+    font-size: 140% !important;
+}
+body.accessibility-mode .staff-role {
+    font-size: 120% !important;
+}
+body.accessibility-mode .review-card p {
+    font-size: 140% !important;
+    line-height: 1.8 !important;
+}
+
+/* Hide images in accessibility mode */
+body.accessibility-mode img,
+body.accessibility-mode .hero-image,
+body.accessibility-mode .about-img,
+body.accessibility-mode .directions-illustration,
+body.accessibility-mode .staff-img,
+body.accessibility-mode .staff-list-card img,
+body.accessibility-mode .book-cover,
+body.accessibility-mode .location-map,
+body.accessibility-mode iframe,
+body.accessibility-mode .floating-circle,
+body.accessibility-mode .ippogallery-section,
+body.accessibility-mode .ippogallery-track {
+    display: none !important;
+}
+
+/* Keep icons visible */
+body.accessibility-mode .fas,
+body.accessibility-mode .far,
+body.accessibility-mode .fab {
+    display: inline-block !important;
+    font-size: inherit !important;
+}
+
+/* Adjust layout when images hidden */
+body.accessibility-mode .hero {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .about {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .directions-wrapper {
+    grid-template-columns: 1fr !important;
+}
+body.accessibility-mode .location {
+    grid-template-columns: 1fr !important;
+}
+
+/* Ensure buttons are large and visible */
+body.accessibility-mode .btn-primary,
+body.accessibility-mode .btn-secondary,
+body.accessibility-mode .btn-outline {
+    min-height: 56px !important;
+    font-weight: 700 !important;
+}
+
+/* Increase chat bubble size */
+body.accessibility-mode .chat-bubble {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 28px !important;
+}
+
+/* Cookie banner larger */
+body.accessibility-mode #cookie-banner {
+    font-size: 140% !important;
+}
+body.accessibility-mode #cookie-banner button {
+    font-size: 130% !important;
+    padding: 12px 28px !important;
+}
+
 @media (max-width: 768px) {
   .ippogallery-track img {
     height: 200px;
