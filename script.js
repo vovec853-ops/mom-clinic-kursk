@@ -264,6 +264,39 @@
       let modal = document.getElementById('socialModal');
       if (!modal) {
         document.body.insertAdjacentHTML('beforeend', `
+          <div id="socialModal" onclick="if(event.target===this)closeSocialModal()">
+            <div class="social-modal-content">
+              <span class="social-modal-close" onclick="closeSocialModal()">&times;</span>
+              <div class="social-modal-title">Мы тут</div>
+              <div class="social-modal-subtitle">Присоединяйтесь к нам в социальных сетях</div>
+              <div class="social-modal-buttons">
+                <a href="https://vk.com/club212652456" target="_blank" rel="noopener noreferrer" class="social-modal-btn vk">
+                  <i class="fab fa-vk"></i>Мы в ВК
+                </a>
+                <a href="https://vk.com/public222835645" target="_blank" rel="noopener noreferrer" class="social-modal-btn ippomom">
+                  <i class="fab fa-vk"></i>IPPOMOM
+                </a>
+              </div>
+            </div>
+          </div>
+        `);
+        modal = document.getElementById('socialModal');
+      }
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSocialModal() {
+      const modal = document.getElementById('socialModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+    function openSocialModal() {
+      let modal = document.getElementById('socialModal');
+      if (!modal) {
+        document.body.insertAdjacentHTML('beforeend', `
           <div id="socialModal" class="doctor-modal" onclick="if(event.target===this)closeSocialModal()">
             <div class="doctor-modal-content" style="max-width: 400px; text-align: center;">
               <span class="doctor-modal-close" onclick="closeSocialModal()">&times;</span>
