@@ -1,0 +1,7 @@
+{
+  "action": "evaluate",
+  "args": {
+    "code": "location.reload(true)"
+  },
+  "session": "debug-emailjs"
+}

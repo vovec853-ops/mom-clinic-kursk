@@ -1,0 +1,1 @@
+{"action":"evaluate","args":{"code":"(() => { const f = document.getElementById('pediatrForm'); f.querySelector('input[name=feedingType][value=mixed]').click(); f.querySelector('input[name=vaccines][value=yes]').click(); f.querySelector('input[name=consent]').click(); return 'radio done'; })()"},"session":"form-test2"}
