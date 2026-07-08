@@ -1440,8 +1440,7 @@ function handleSubmit(e) {
     feedingType: data.feedingType || '',
     allergies: data.allergies || '',
     diseases: data.diseases || '',
-    vaccines: data.vaccines || '',
-    reply_to: data.email || ''
+    vaccines: data.vaccines || ''
   };
   
   // Send via EmailJS
