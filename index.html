@@ -2227,54 +2227,46 @@
 </div>
 
 <script>
-// Form submission handler — sends data via FormSubmit.co
-
 function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-  
-  // Show loading state
+
   const submitBtn = form.querySelector('button[type="submit"]');
   const originalText = submitBtn ? submitBtn.innerHTML : '';
   if (submitBtn) {
     submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
   }
-  
-  // Determine form type based on form ID
-  const formType = form.id === 'pediatrForm' ? 'Анкета для педиатра' : 
+
+  const formType = form.id === 'pediatrForm' ? 'Анкета для педиатра' :
                    form.id === 'nevrologForm' ? 'Анкета для невролога' : 'Анкета';
-  
-  // Build comprehensive message from all form fields
+
   let messageParts = [];
-  
   if (form.id === 'pediatrForm') {
-    // Pediatrician form fields
     if (data.birthWeight) messageParts.push('Вес при рождении: ' + data.birthWeight + ' кг');
     if (data.currentWeight) messageParts.push('Текущий вес: ' + data.currentWeight + ' кг');
     if (data.height) messageParts.push('Рост: ' + data.height + ' см');
     if (data.feedingType) {
-      const feedingMap = {breast: 'Грудное', formula: 'Искусственное', mixed: 'Смешанное'};
+      const feedingMap = {breast:'Грудное', formula:'Искусственное', mixed:'Смешанное'};
       messageParts.push('Тип вскармливания: ' + (feedingMap[data.feedingType] || data.feedingType));
     }
     if (data.allergies) messageParts.push('Аллергии: ' + data.allergies);
     if (data.diseases) messageParts.push('Перенесенные заболевания: ' + data.diseases);
     if (data.vaccines) {
-      const vaccinesMap = {yes: 'Да, все', no: 'Нет', partial: 'Частично'};
+      const vaccinesMap = {yes:'Да, все', no:'Нет', partial:'Частично'};
       messageParts.push('Прививки: ' + (vaccinesMap[data.vaccines] || data.vaccines));
     }
     if (data.currentComplaints) messageParts.push('Текущие жалобы: ' + data.currentComplaints);
   } else if (form.id === 'nevrologForm') {
-    // Neurologist form fields
     if (data.complaints) messageParts.push('Жалобы: ' + data.complaints);
     if (data.pregnancy) {
-      const pregnancyMap = {normal: 'Нормально', complicated: 'С осложнениями'};
+      const pregnancyMap = {normal:'Нормально', complicated:'С осложнениями'};
       messageParts.push('Беременность: ' + (pregnancyMap[data.pregnancy] || data.pregnancy));
     }
     if (data.birthComplications) {
-      const bcMap = {no: 'Нет', yes: 'Да'};
+      const bcMap = {no:'Нет', yes:'Да'};
       messageParts.push('Осложнения при родах: ' + (bcMap[data.birthComplications] || data.birthComplications));
       if (data.birthDetails) messageParts.push('Детали родов: ' + data.birthDetails);
     }
@@ -2292,23 +2284,18 @@ function handleSubmit(e) {
     if (data.heredity) messageParts.push('Наследственность: ' + data.heredity);
     if (data.extraInfo) messageParts.push('Дополнительная информация: ' + data.extraInfo);
   }
-  
+
   const message = messageParts.join('\n');
 
-  // Prepare template parameters - ALL fields from both forms
   const templateParams = {
     type: formType,
-    // Basic info (both forms)
     childName: data.childName || '',
     childAge: data.childAge || '',
     birthDate: data.birthDate || '',
     phone: data.phone || '',
     email: data.email || '',
-    // Single message field with all data (for backward compatibility with template)
     сообщение: message,
     message: message,
-    
-    // Individual fields for future template updates
     birthWeight: data.birthWeight || '',
     currentWeight: data.currentWeight || '',
     height: data.height || '',
@@ -2333,24 +2320,18 @@ function handleSubmit(e) {
     heredity: data.heredity || '',
     extraInfo: data.extraInfo || ''
   };
-  
-  // Send via FormSubmit.co (reliable email delivery)
+
   fetch('https://formsubmit.co/ajax/vovec853@gmail.com', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    headers: {'Content-Type': 'application/json', 'Accept': 'application/json'},
     body: JSON.stringify(templateParams)
   })
     .then(function(response) {
       if (response.ok) {
         console.log('Email sent via FormSubmit.co');
         showFormSuccess(form);
-      });
-}
-
-function showFormSuccess(form) {
-        return response.text().then(function(text) {
-          throw new Error(text || 'Server error');
-        });
+      } else {
+        return response.text().then(function(text) { throw new Error(text || 'Server error'); });
       }
     })
     .catch(function(error) {
@@ -2363,24 +2344,17 @@ function showFormSuccess(form) {
         submitBtn.innerHTML = originalText;
       }
     });
-
 }
 
 function showFormSuccess(form) {
-  // Create success message
   const successDiv = document.createElement('div');
   successDiv.className = 'form-success-message';
   successDiv.innerHTML = '<i class="fas fa-check-circle"></i> <strong>Анкета успешно отправлена!</strong><br>Мы свяжемся с вами для подтверждения записи.';
   successDiv.style.cssText = 'background: linear-gradient(135deg, #d4edda, #c3e6cb); color: #155724; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; font-size: 16px;';
-  
   form.insertBefore(successDiv, form.firstChild);
   form.reset();
-  
-  // Scroll to success message
   successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  
-  // Remove after 5 seconds
-  setTimeout(() => {
+  setTimeout(function() {
     if (successDiv.parentNode) successDiv.parentNode.removeChild(successDiv);
   }, 5000);
 }
@@ -2390,15 +2364,13 @@ function showFormError(form, message) {
   errorDiv.className = 'form-error-message';
   errorDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> <strong>Ошибка:</strong> ' + message;
   errorDiv.style.cssText = 'background: linear-gradient(135deg, #f8d7da, #f5c6cb); color: #721c24; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; font-size: 16px;';
-  
   form.insertBefore(errorDiv, form.firstChild);
   errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  
-  setTimeout(() => {
+  setTimeout(function() {
     if (errorDiv.parentNode) errorDiv.parentNode.removeChild(errorDiv);
   }, 5000);
 }
-    </script>
+    </script></script>
     <script src="script.js?v=13"></script>
 
 <!-- Cookie Consent Banner -->
