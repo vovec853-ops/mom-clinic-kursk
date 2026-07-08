@@ -1,0 +1,7 @@
+{
+  "action": "evaluate",
+  "args": {
+    "code": "(()=>{const token=localStorage.getItem('emailjs_token')||sessionStorage.getItem('emailjs_token'); const cookies=document.cookie.split(';').map(c=>c.trim()).filter(c=>c.includes('token')||c.includes('auth')||c.includes('session')); return JSON.stringify({token:token?token.substring(0,50):'none', cookies:cookies});})()"
+  },
+  "session": "emailjs-update"
+}

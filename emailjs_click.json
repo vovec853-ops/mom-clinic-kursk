@@ -1,0 +1,7 @@
+{
+  "action": "evaluate",
+  "args": {
+    "code": "(()=>{const tabs=document.querySelectorAll('a, button, div[role=tab]'); for(let tab of tabs){if(tab.textContent.includes('Редактировать содержимое')){tab.click(); return 'Clicked edit content tab';}} return 'Tab not found';})()"
+  },
+  "session": "emailjs-update"
+}

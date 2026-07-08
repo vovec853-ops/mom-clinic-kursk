@@ -1,0 +1,7 @@
+{
+  "action": "evaluate",
+  "args": {
+    "code": "document.elementFromPoint(930, 410).click()"
+  },
+  "session": "emailjs-update"
+}

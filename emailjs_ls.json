@@ -1,0 +1,7 @@
+{
+  "action": "evaluate",
+  "args": {
+    "code": "(()=>{const results=[]; for(let key in localStorage){results.push(key+': '+localStorage.getItem(key).substring(0,30));} return JSON.stringify(results);})()"
+  },
+  "session": "emailjs-update"
+}

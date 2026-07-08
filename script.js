@@ -1425,6 +1425,54 @@ function handleSubmit(e) {
   const formType = form.id === 'pediatrForm' ? 'Анкета для педиатра' : 
                    form.id === 'nevrologForm' ? 'Анкета для невролога' : 'Анкета';
   
+  // Build comprehensive message from all form fields
+  let messageParts = [];
+  
+  if (form.id === 'pediatrForm') {
+    // Pediatrician form fields
+    if (data.birthWeight) messageParts.push('Вес при рождении: ' + data.birthWeight + ' кг');
+    if (data.currentWeight) messageParts.push('Текущий вес: ' + data.currentWeight + ' кг');
+    if (data.height) messageParts.push('Рост: ' + data.height + ' см');
+    if (data.feedingType) {
+      const feedingMap = {breast: 'Грудное', formula: 'Искусственное', mixed: 'Смешанное'};
+      messageParts.push('Тип вскармливания: ' + (feedingMap[data.feedingType] || data.feedingType));
+    }
+    if (data.allergies) messageParts.push('Аллергии: ' + data.allergies);
+    if (data.diseases) messageParts.push('Перенесенные заболевания: ' + data.diseases);
+    if (data.vaccines) {
+      const vaccinesMap = {yes: 'Да, все', no: 'Нет', partial: 'Частично'};
+      messageParts.push('Прививки: ' + (vaccinesMap[data.vaccines] || data.vaccines));
+    }
+    if (data.currentComplaints) messageParts.push('Текущие жалобы: ' + data.currentComplaints);
+  } else if (form.id === 'nevrologForm') {
+    // Neurologist form fields
+    if (data.complaints) messageParts.push('Жалобы: ' + data.complaints);
+    if (data.pregnancy) {
+      const pregnancyMap = {normal: 'Нормально', complicated: 'С осложнениями'};
+      messageParts.push('Беременность: ' + (pregnancyMap[data.pregnancy] || data.pregnancy));
+    }
+    if (data.birthComplications) {
+      const bcMap = {no: 'Нет', yes: 'Да'};
+      messageParts.push('Осложнения при родах: ' + (bcMap[data.birthComplications] || data.birthComplications));
+      if (data.birthDetails) messageParts.push('Детали родов: ' + data.birthDetails);
+    }
+    if (data.holdHead) messageParts.push('Держал голову: ' + data.holdHead);
+    if (data.sitAge) messageParts.push('Начал сидеть: ' + data.sitAge);
+    if (data.crawlAge) messageParts.push('Начал ползать: ' + data.crawlAge);
+    if (data.walkAge) messageParts.push('Начал ходить: ' + data.walkAge);
+    if (data.firstWords) messageParts.push('Первые слова: ' + data.firstWords);
+    if (data.seizures) messageParts.push('Судороги: ' + (data.seizures === 'yes' ? 'Да' : 'Нет'));
+    if (data.headTrauma) messageParts.push('Травмы головы: ' + (data.headTrauma === 'yes' ? 'Да' : 'Нет'));
+    if (data.medications) {
+      messageParts.push('Прием лекарств: ' + (data.medications === 'yes' ? 'Да' : 'Нет'));
+      if (data.medsDetails) messageParts.push('Лекарства: ' + data.medsDetails);
+    }
+    if (data.heredity) messageParts.push('Наследственность: ' + data.heredity);
+    if (data.extraInfo) messageParts.push('Дополнительная информация: ' + data.extraInfo);
+  }
+  
+  const message = messageParts.join('\\n');
+
   // Prepare template parameters - ALL fields from both forms
   const templateParams = {
     type: formType,
@@ -1434,8 +1482,11 @@ function handleSubmit(e) {
     birthDate: data.birthDate || '',
     phone: data.phone || '',
     email: data.email || '',
+    // Single message field with all data (for backward compatibility with template)
+    сообщение: message,
+    message: message,
     
-    // Pediatrician form fields
+    // Individual fields for future template updates
     birthWeight: data.birthWeight || '',
     currentWeight: data.currentWeight || '',
     height: data.height || '',
@@ -1444,8 +1495,6 @@ function handleSubmit(e) {
     diseases: data.diseases || '',
     vaccines: data.vaccines || '',
     currentComplaints: data.currentComplaints || '',
-    
-    // Neurologist form fields
     complaints: data.complaints || '',
     pregnancy: data.pregnancy || '',
     birthComplications: data.birthComplications || '',

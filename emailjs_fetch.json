@@ -1,0 +1,7 @@
+{
+  "action": "evaluate",
+  "args": {
+    "code": "(()=>{fetch('/api/v1.1/template/template_cgiqpvr',{method:'GET'}).then(r=>r.json()).then(d=>JSON.stringify(d)).catch(e=>e.message)})()"
+  },
+  "session": "emailjs-update"
+}
