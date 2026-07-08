@@ -1,0 +1,7 @@
+{
+  "action": "evaluate",
+  "args": {
+    "code": "(()=>{const rows=document.querySelectorAll('tr'); for(let row of rows){const time=row.textContent; if(time.includes('21:39')||time.includes('21:37')){row.click(); return 'Clicked row: '+time.substring(0,30);}} return 'Row not found';})()"
+  },
+  "session": "emailjs-history"
+}

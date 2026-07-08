@@ -1471,7 +1471,7 @@ function handleSubmit(e) {
     if (data.extraInfo) messageParts.push('Дополнительная информация: ' + data.extraInfo);
   }
   
-  const message = messageParts.join('\\n');
+  const message = messageParts.join('\n');
 
   // Prepare template parameters - ALL fields from both forms
   const templateParams = {
