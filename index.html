@@ -30,8 +30,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=12">
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <link rel="stylesheet" href="style.css?v=13">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -2228,20 +2227,7 @@
 </div>
 
 <script>
-// EmailJS Configuration
-// TODO: Replace 'YOUR_TEMPLATE_ID' with your actual EmailJS Template ID
-const EMAILJS_CONFIG = {
-  publicKey: '0MLhnyQeRI1-Dx1CF',
-  serviceId: 'service_d7ajzly',
-  templateId: 'template_cgiqpvr'  // <-- Replace this after creating template in EmailJS dashboard
-};
-
-// Initialize EmailJS
-(function() {
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
-  }
-})();
+// Form submission handler — sends data via FormSubmit.co
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -2348,31 +2334,36 @@ function handleSubmit(e) {
     extraInfo: data.extraInfo || ''
   };
   
-  // Send via EmailJS
-  if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.templateId !== 'YOUR_TEMPLATE_ID') {
-    emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
-      .then(function(response) {
-        console.log('Email sent:', response);
+  // Send via FormSubmit.co (reliable email delivery)
+  fetch('https://formsubmit.co/ajax/vovec853@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(templateParams)
+  })
+    .then(function(response) {
+      if (response.ok) {
+        console.log('Email sent via FormSubmit.co');
         showFormSuccess(form);
-      }, function(error) {
-        console.error('Email error:', error);
-        showFormError(form, 'Ошибка отправки. Пожалуйста, попробуйте позже или позвоните нам.');
-      })
-      .finally(function() {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-        }
       });
-  } else {
-    // Fallback: show data for testing
-    console.log('EmailJS not configured or template ID not set. Form data:', templateParams);
-    showFormSuccess(form);
-    if (submitBtn) {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
-    }
-  }
+}
+
+function showFormSuccess(form) {
+        return response.text().then(function(text) {
+          throw new Error(text || 'Server error');
+        });
+      }
+    })
+    .catch(function(error) {
+      console.error('Email error:', error);
+      showFormError(form, 'Ошибка отправки. Пожалуйста, попробуйте позже или позвоните нам.');
+    })
+    .finally(function() {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+      }
+    });
+
 }
 
 function showFormSuccess(form) {
@@ -2408,7 +2399,7 @@ function showFormError(form, message) {
   }, 5000);
 }
     </script>
-    <script src="script.js?v=12"></script>
+    <script src="script.js?v=13"></script>
 
 <!-- Cookie Consent Banner -->
 <div id="cookie-banner" style="display:none; position:fixed; bottom:0; left:0; right:0; background:#1a1a2e; color:#fff; padding:16px 24px; z-index:9999; font-size:0.9rem; box-shadow:0 -4px 20px rgba(0,0,0,0.3);">
