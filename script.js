@@ -1425,22 +1425,42 @@ function handleSubmit(e) {
   const formType = form.id === 'pediatrForm' ? 'Анкета для педиатра' : 
                    form.id === 'nevrologForm' ? 'Анкета для невролога' : 'Анкета';
   
-  // Prepare template parameters
+  // Prepare template parameters - ALL fields from both forms
   const templateParams = {
     type: formType,
+    // Basic info (both forms)
     childName: data.childName || '',
-    childAge: data.childAge || data.childAgeNev || '',
+    childAge: data.childAge || '',
+    birthDate: data.birthDate || '',
     phone: data.phone || '',
     email: data.email || '',
-    message: data.currentComplaints || data.nevrologComplaints || data.nevrologAnamnez || '',
-    birthDate: data.birthDate || '',
+    
+    // Pediatrician form fields
     birthWeight: data.birthWeight || '',
     currentWeight: data.currentWeight || '',
     height: data.height || '',
     feedingType: data.feedingType || '',
     allergies: data.allergies || '',
     diseases: data.diseases || '',
-    vaccines: data.vaccines || ''
+    vaccines: data.vaccines || '',
+    currentComplaints: data.currentComplaints || '',
+    
+    // Neurologist form fields
+    complaints: data.complaints || '',
+    pregnancy: data.pregnancy || '',
+    birthComplications: data.birthComplications || '',
+    birthDetails: data.birthDetails || '',
+    holdHead: data.holdHead || '',
+    sitAge: data.sitAge || '',
+    crawlAge: data.crawlAge || '',
+    walkAge: data.walkAge || '',
+    firstWords: data.firstWords || '',
+    seizures: data.seizures || '',
+    headTrauma: data.headTrauma || '',
+    medications: data.medications || '',
+    medsDetails: data.medsDetails || '',
+    heredity: data.heredity || '',
+    extraInfo: data.extraInfo || ''
   };
   
   // Send via EmailJS

@@ -2039,10 +2039,24 @@
       </div>
     </div>
 
+    <div class="form-card">
+      <h2>📞 Контактная информация</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nevrPhone" class="required">Контактный телефон</label>
+          <input type="tel" id="nevrPhone" name="phone" placeholder="+7 (999) 123-45-67" required>
+        </div>
+        <div class="form-group">
+          <label for="nevrEmail">Email</label>
+          <input type="email" id="nevrEmail" name="email" placeholder="example@mail.ru">
+        </div>
+      </div>
+    </div>
+
     <div class="form-card" style="background: linear-gradient(135deg, #F0F5FF, #FFF5F8);">
       <div class="form-group" style="display:flex; align-items:flex-start; gap:12px;">
-        <input type="checkbox" id="consent" name="consent" required style="margin-top:4px; width:18px; height:18px; flex-shrink:0;">
-        <label for="consent" style="font-size:0.85rem; line-height:1.5; color:var(--text-light);">
+        <input type="checkbox" id="consentNevr" name="consent" required style="margin-top:4px; width:18px; height:18px; flex-shrink:0;">
+        <label for="consentNevr" style="font-size:0.85rem; line-height:1.5; color:var(--text-light);">
           Я даю согласие на обработку моих персональных данных в соответствии с
           <a onclick="showPage('privacy')" style="color:var(--primary); text-decoration:underline; cursor:pointer;">Политикой конфиденциальности</a>.
           Я понимаю, что диагностику и лечение назначает только врач после очного осмотра.

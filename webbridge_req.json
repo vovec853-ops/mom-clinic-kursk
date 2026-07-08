@@ -1,1 +1,0 @@
-{"action":"evaluate","args":{"code":"JSON.stringify(console.logs||[])"},"session":"emailjs-test"}
