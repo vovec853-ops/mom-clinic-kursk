@@ -1392,13 +1392,116 @@ document.querySelectorAll('input[name="medications"]').forEach(function(el) {
   });
 });
 
+// EmailJS Configuration
+// TODO: Replace 'YOUR_TEMPLATE_ID' with your actual EmailJS Template ID
+const EMAILJS_CONFIG = {
+  publicKey: '0MLhnyQeRI1-Dx1CF',
+  serviceId: 'service_d7ajzly',
+  templateId: 'YOUR_TEMPLATE_ID'  // <-- Replace this after creating template in EmailJS dashboard
+};
+
+// Initialize EmailJS
+(function() {
+  if (typeof emailjs !== 'undefined') {
+    emailjs.init({ publicKey: EMAILJS_CONFIG.publicKey });
+  }
+})();
+
 function handleSubmit(e) {
   e.preventDefault();
-  const formData = new FormData(e.target);
+  const form = e.target;
+  const formData = new FormData(form);
   const data = Object.fromEntries(formData.entries());
-  // console.log('Form data:', data);
-  alert('Анкета отправлена! Мы свяжемся с вами для подтверждения записи.');
-  // Here you would normally send data to server
+  
+  // Show loading state
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalText = submitBtn ? submitBtn.innerHTML : '';
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+  }
+  
+  // Determine form type based on form ID
+  const formType = form.id === 'pediatrForm' ? 'Анкета для педиатра' : 
+                   form.id === 'nevrologForm' ? 'Анкета для невролога' : 'Анкета';
+  
+  // Prepare template parameters
+  const templateParams = {
+    type: formType,
+    childName: data.childName || '',
+    childAge: data.childAge || data.childAgeNev || '',
+    phone: data.phone || '',
+    email: data.email || '',
+    message: data.currentComplaints || data.nevrologComplaints || data.nevrologAnamnez || '',
+    birthDate: data.birthDate || '',
+    birthWeight: data.birthWeight || '',
+    currentWeight: data.currentWeight || '',
+    height: data.height || '',
+    feedingType: data.feedingType || '',
+    allergies: data.allergies || '',
+    diseases: data.diseases || '',
+    vaccines: data.vaccines || '',
+    reply_to: data.email || ''
+  };
+  
+  // Send via EmailJS
+  if (typeof emailjs !== 'undefined' && EMAILJS_CONFIG.templateId !== 'YOUR_TEMPLATE_ID') {
+    emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, templateParams)
+      .then(function(response) {
+        console.log('Email sent:', response);
+        showFormSuccess(form);
+      }, function(error) {
+        console.error('Email error:', error);
+        showFormError(form, 'Ошибка отправки. Пожалуйста, попробуйте позже или позвоните нам.');
+      })
+      .finally(function() {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }
+      });
+  } else {
+    // Fallback: show data for testing
+    console.log('EmailJS not configured or template ID not set. Form data:', templateParams);
+    showFormSuccess(form);
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalText;
+    }
+  }
+}
+
+function showFormSuccess(form) {
+  // Create success message
+  const successDiv = document.createElement('div');
+  successDiv.className = 'form-success-message';
+  successDiv.innerHTML = '<i class="fas fa-check-circle"></i> <strong>Анкета успешно отправлена!</strong><br>Мы свяжемся с вами для подтверждения записи.';
+  successDiv.style.cssText = 'background: linear-gradient(135deg, #d4edda, #c3e6cb); color: #155724; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; font-size: 16px;';
+  
+  form.insertBefore(successDiv, form.firstChild);
+  form.reset();
+  
+  // Scroll to success message
+  successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  
+  // Remove after 5 seconds
+  setTimeout(() => {
+    if (successDiv.parentNode) successDiv.parentNode.removeChild(successDiv);
+  }, 5000);
+}
+
+function showFormError(form, message) {
+  const errorDiv = document.createElement('div');
+  errorDiv.className = 'form-error-message';
+  errorDiv.innerHTML = '<i class="fas fa-exclamation-circle"></i> <strong>Ошибка:</strong> ' + message;
+  errorDiv.style.cssText = 'background: linear-gradient(135deg, #f8d7da, #f5c6cb); color: #721c24; padding: 20px; border-radius: 12px; margin: 20px 0; text-align: center; font-size: 16px;';
+  
+  form.insertBefore(errorDiv, form.firstChild);
+  errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  
+  setTimeout(() => {
+    if (errorDiv.parentNode) errorDiv.parentNode.removeChild(errorDiv);
+  }, 5000);
 }
 function goHome() {
   if (window.parent !== window) {
