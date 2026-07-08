@@ -1397,7 +1397,7 @@ document.querySelectorAll('input[name="medications"]').forEach(function(el) {
 const EMAILJS_CONFIG = {
   publicKey: '0MLhnyQeRI1-Dx1CF',
   serviceId: 'service_d7ajzly',
-  templateId: 'YOUR_TEMPLATE_ID'  // <-- Replace this after creating template in EmailJS dashboard
+  templateId: 'template_cgiqpvr'  // <-- Replace this after creating template in EmailJS dashboard
 };
 
 // Initialize EmailJS
