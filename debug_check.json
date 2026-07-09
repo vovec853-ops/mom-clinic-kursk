@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "document.querySelector('script[src*=script]').src"
-  },
-  "session": "debug-emailjs"
-}

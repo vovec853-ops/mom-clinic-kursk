@@ -1,9 +1,0 @@
-{"action":"fill","args":{"selector":"#pediatrForm input[name='birthDate']","value":"2020-03-15"},"session":"form-test2"}
-{"action":"fill","args":{"selector":"#pediatrForm input[name='birthWeight']","value":"3.5"},"session":"form-test2"}
-{"action":"fill","args":{"selector":"#pediatrForm input[name='currentWeight']","value":"18"},"session":"form-test2"}
-{"action":"fill","args":{"selector":"#pediatrForm input[name='height']","value":"110"},"session":"form-test2"}
-{"action":"fill","args":{"selector":"#pediatrForm textarea[name='allergies']","value":"Нет"},"session":"form-test2"}
-{"action":"fill","args":{"selector":"#pediatrForm textarea[name='diseases']","value":"Ветрянка"},"session":"form-test2"}
-{"action":"fill","args":{"selector":"#pediatrForm textarea[name='currentComplaints']","value":"Проверка работы email"},"session":"form-test2"}
-{"action":"fill","args":{"selector":"#pediatrForm input[name='phone']","value":"+79001234567"},"session":"form-test2"}
-{"action":"fill","args":{"selector":"#pediatrForm input[name='email']","value":"test@example.com"},"session":"form-test2"}

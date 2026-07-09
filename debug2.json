@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "(()=>{return JSON.stringify({emailjsLoaded: typeof emailjs !== 'undefined', hasSend: typeof emailjs !== 'undefined' && typeof emailjs.send === 'function'});})()"
-  },
-  "session": "debug-emailjs"
-}

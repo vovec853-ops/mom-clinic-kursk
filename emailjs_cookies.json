@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "document.cookie"
-  },
-  "session": "emailjs-update"
-}

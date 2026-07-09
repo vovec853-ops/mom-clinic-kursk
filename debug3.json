@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "(()=>{const result={status:'sending'}; emailjs.send('service_d7ajzly','template_cgiqpvr',{type:'Тест напрямую',childName:'Тест',childAge:'10',phone:'+79000000000',email:'vovec853@gmail.com',message:'Это тестовое сообщение для проверки работы EmailJS'}).then(function(response){result.status='success'; result.response=response;}).catch(function(error){result.status='error'; result.error=error.text||error.message||JSON.stringify(error);}); return JSON.stringify(result);})()"
-  },
-  "session": "debug-emailjs"
-}

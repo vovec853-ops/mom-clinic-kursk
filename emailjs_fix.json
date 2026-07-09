@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "(()=>{const inputs=document.querySelectorAll('input'); for(let inp of inputs){if(inp.value==='{{email}}'){inp.value='vovec853@gmail.com'; inp.dispatchEvent(new Event('input',{bubbles:true})); return 'Fixed To Email';}} return 'Field not found';})()"
-  },
-  "session": "emailjs-update"
-}

@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "(()=>{for(let key in localStorage){if(key.includes('token')||key.includes('auth')||key.includes('emailjs')){return key+': '+localStorage.getItem(key).substring(0,50);}} for(let key in sessionStorage){if(key.includes('token')||key.includes('auth')||key.includes('emailjs')){return key+': '+sessionStorage.getItem(key).substring(0,50);}} return 'No token found';})()"
-  },
-  "session": "emailjs-update"
-}

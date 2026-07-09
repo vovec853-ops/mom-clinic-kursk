@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "showPage('anketa-pediatr')"
-  },
-  "session": "form-test"
-}

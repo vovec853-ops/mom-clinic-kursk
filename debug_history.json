@@ -1,7 +1,0 @@
-{
-  "action": "navigate",
-  "args": {
-    "url": "https://dashboard.emailjs.com/admin/history"
-  },
-  "session": "debug-emailjs"
-}

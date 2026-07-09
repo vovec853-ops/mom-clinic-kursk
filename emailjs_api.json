@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "(()=>{return JSON.stringify({user:typeof window.user!=='undefined'?window.user:'no', store:typeof window.store!=='undefined'?Object.keys(window.store):'no', api:typeof window.api!=='undefined'?'yes':'no'});})()"
-  },
-  "session": "emailjs-update"
-}

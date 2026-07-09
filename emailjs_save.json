@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "(()=>{const btns=document.querySelectorAll('button'); for(let btn of btns){if(btn.textContent.includes('Сохран')||btn.innerHTML.includes('Сохран')){btn.click(); return 'Clicked save: '+btn.textContent;}} return 'Save not found';})()"
-  },
-  "session": "emailjs-update"
-}

@@ -1,1 +1,0 @@
-{"action":"evaluate","args":{"code":"(()=>{const form=document.getElementById('pediatrForm'); if(!form)return 'Form not found'; form.dispatchEvent(new Event('submit',{bubbles:true,cancelable:true})); return 'Form submitted';})()"}

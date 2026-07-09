@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "(()=>{const checkbox=document.querySelector('input[type=checkbox]'); if(checkbox){checkbox.click(); return 'Checkbox clicked';} return 'Checkbox not found';})()"
-  },
-  "session": "emailjs-update"
-}

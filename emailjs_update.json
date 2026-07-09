@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "(()=>{const btns=document.querySelectorAll('button'); for(let btn of btns){const svg=btn.querySelector('svg'); if(svg&&svg.outerHTML.includes('edit')){btn.click(); return 'Clicked edit';}} return 'Not found';})()"
-  },
-  "session": "emailjs-update"
-}

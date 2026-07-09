@@ -1,7 +1,0 @@
-{
-  "action": "evaluate",
-  "args": {
-    "code": "(()=>{let logs=[]; const oldLog=console.log; console.log=function(...args){logs.push(args.join(' ')); oldLog.apply(console,args);}; setTimeout(()=>{console.log=oldLog;},100); return JSON.stringify(logs.slice(-5));})()"
-  },
-  "session": "debug-emailjs"
-}
